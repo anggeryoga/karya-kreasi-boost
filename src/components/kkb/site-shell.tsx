@@ -4,10 +4,12 @@ import { makeWhatsappLink } from "../../data/products";
 
 const navItems = [
   { to: "/", label: "Home" },
-  { to: "/catalog", label: "Catalog" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/catalog", label: "Katalog" },
+  { to: "/about", label: "Tentang" },
+  { to: "/contact", label: "Kontak" },
 ] as const;
+
+const mobileNavItems = navItems.filter((item) => item.to !== "/");
 
 export function SiteHeader() {
   return (
@@ -48,12 +50,12 @@ export function SiteHeader() {
           WhatsApp
         </a>
       </div>
-      <nav className="flex gap-2 overflow-x-auto px-4 pb-3 md:hidden" aria-label="Navigasi mobile">
-        {navItems.map((item) => (
+      <nav className="grid grid-cols-3 gap-2 px-4 pb-3 md:hidden" aria-label="Navigasi mobile">
+        {mobileNavItems.map((item) => (
           <Link
             key={item.to}
             to={item.to}
-            className="min-w-20 flex-1 rounded-md border bg-card px-3 py-2 text-center text-xs font-semibold shadow-neo-sm"
+            className="rounded-md border bg-card px-2 py-2 text-center text-xs font-semibold shadow-neo-sm"
             activeProps={{ className: "bg-brand-blue text-accent-foreground" }}
           >
             {item.label}

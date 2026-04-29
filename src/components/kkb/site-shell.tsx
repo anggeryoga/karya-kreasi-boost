@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import kkbLogo from "../../assets/kkb-logo.png";
 import { makeWhatsappLink } from "../../data/products";
 
 const navItems = [
@@ -10,18 +11,18 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40 border-b bg-card/95 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           to="/"
-          className="group flex items-center gap-3 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
+          className="group flex min-w-0 items-center gap-3 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
         >
-          <span className="grid h-11 w-11 place-items-center rounded-lg border bg-brand-yellow font-black shadow-neo transition-transform group-hover:-translate-y-0.5">
-            KKB
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg border bg-card p-1.5 transition-transform group-hover:-translate-y-0.5 sm:h-14 sm:w-14">
+            <img src={kkbLogo} alt="Logo Karya Kreasi Bersama" className="h-full w-full object-contain" />
           </span>
-          <span className="hidden leading-tight sm:block">
-            <span className="block text-sm font-black">Karya Kreasi Bersama</span>
-            <span className="block text-xs font-bold text-muted-foreground">
+          <span className="min-w-0 leading-tight">
+            <span className="block truncate text-sm font-extrabold sm:text-base">Karya Kreasi Bersama</span>
+            <span className="block truncate text-xs font-medium text-muted-foreground">
               Gerobak modern siap pakai
             </span>
           </span>
@@ -31,8 +32,8 @@ export function SiteHeader() {
             <Link
               key={item.to}
               to={item.to}
-              className="rounded-md border bg-card px-4 py-2 text-sm font-black shadow-neo-sm transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
-              activeProps={{ className: "bg-brand-purple" }}
+              className="rounded-md border bg-card px-4 py-2 text-sm font-semibold shadow-neo-sm transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
+              activeProps={{ className: "bg-brand-blue text-accent-foreground" }}
             >
               {item.label}
             </Link>
@@ -47,13 +48,13 @@ export function SiteHeader() {
           WhatsApp
         </a>
       </div>
-      <nav className="grid grid-cols-4 gap-2 px-4 pb-3 md:hidden" aria-label="Navigasi mobile">
+      <nav className="flex gap-2 overflow-x-auto px-4 pb-3 md:hidden" aria-label="Navigasi mobile">
         {navItems.map((item) => (
           <Link
             key={item.to}
             to={item.to}
-            className="rounded-md border bg-card px-2 py-2 text-center text-xs font-black shadow-neo-sm"
-            activeProps={{ className: "bg-brand-purple" }}
+            className="min-w-20 flex-1 rounded-md border bg-card px-3 py-2 text-center text-xs font-semibold shadow-neo-sm"
+            activeProps={{ className: "bg-brand-blue text-accent-foreground" }}
           >
             {item.label}
           </Link>
@@ -65,23 +66,26 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t bg-foreground text-primary-foreground">
+    <footer className="border-t bg-card text-foreground">
       <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
-        <div className="rounded-lg border border-primary-foreground bg-brand-yellow p-6 text-foreground shadow-neo">
-          <p className="text-2xl font-black">KKB</p>
-          <p className="mt-2 max-w-md font-bold">
+        <div className="rounded-lg border bg-brand-yellow p-6 text-foreground shadow-neo">
+          <div className="flex items-center gap-3">
+            <img src={kkbLogo} alt="Logo KKB" className="h-12 w-12 rounded-md border bg-card object-contain p-1" />
+            <p className="text-xl font-extrabold">KKB</p>
+          </div>
+          <p className="mt-3 max-w-md font-medium leading-relaxed">
             Solusi Gerobak Usaha Modern & Siap Pakai untuk brand kuliner, minuman, dan retail.
           </p>
         </div>
         <div>
-          <p className="font-black">Kontak</p>
-          <p className="mt-3 text-sm font-bold opacity-80">
+          <p className="font-extrabold">Kontak</p>
+          <p className="mt-3 text-sm font-medium leading-relaxed text-muted-foreground">
             Jl. Workshop Kreatif No. 18, Indonesia
           </p>
-          <p className="mt-1 text-sm font-bold opacity-80">hello@karyakreasibersama.id</p>
+          <p className="mt-1 text-sm font-medium text-muted-foreground">hello@karyakreasibersama.id</p>
         </div>
         <div>
-          <p className="font-black">Mulai proyek</p>
+          <p className="font-extrabold">Mulai proyek</p>
           <a
             className="btn-neo btn-neo-secondary mt-3"
             href={makeWhatsappLink()}

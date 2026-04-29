@@ -43,10 +43,10 @@ function CatalogPage() {
         <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <p className="badge-neo">Catalog</p>
-            <h1 className="mt-5 text-5xl font-black leading-none">
+            <h1 className="mt-5 text-5xl font-extrabold leading-none">
               Pilih gerobak sesuai konsep usaha
             </h1>
-            <p className="mt-4 max-w-2xl font-bold text-muted-foreground">
+            <p className="mt-4 max-w-2xl font-medium leading-relaxed text-muted-foreground">
               Filter model, lihat spesifikasi cepat, lalu lanjut konsultasi untuk ukuran dan
               finishing custom.
             </p>
@@ -88,10 +88,10 @@ function CatalogPage() {
               />
               <div>
                 <p className="badge-neo">{selected.category}</p>
-                <h2 className="mt-4 text-3xl font-black">{selected.name}</h2>
-                <p className="mt-2 text-2xl font-black">{selected.price}</p>
-                <p className="mt-4 font-bold text-muted-foreground">{selected.short}</p>
-                <ul className="mt-5 grid gap-2 font-bold">
+                <h2 className="mt-4 text-3xl font-extrabold">{selected.name}</h2>
+                <p className="mt-2 text-2xl font-extrabold">{selected.price}</p>
+                <p className="mt-4 font-medium leading-relaxed text-muted-foreground">{selected.short}</p>
+                <ul className="mt-5 grid gap-2 font-medium">
                   {selected.specs.map((spec) => (
                     <li key={spec} className="rounded-md border bg-muted px-3 py-2">
                       {spec}

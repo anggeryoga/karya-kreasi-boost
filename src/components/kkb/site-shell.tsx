@@ -3,7 +3,7 @@ import kkbLogo from "../../assets/kkb-logo.png";
 import { makeWhatsappLink } from "../../data/products";
 
 const navItems = [
-  { to: "/", label: "Home" },
+  { to: "/", label: "Beranda" },
   { to: "/catalog", label: "Katalog" },
   { to: "/about", label: "Tentang" },
   { to: "/contact", label: "Kontak" },
@@ -35,6 +35,7 @@ export function SiteHeader() {
               key={item.to}
               to={item.to}
               className="rounded-md border bg-card px-4 py-2 text-sm font-semibold shadow-neo-sm transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
+              activeOptions={{ exact: true }}
               activeProps={{ className: "bg-brand-blue text-accent-foreground" }}
             >
               {item.label}
@@ -56,6 +57,7 @@ export function SiteHeader() {
             key={item.to}
             to={item.to}
             className="rounded-md border bg-card px-2 py-2 text-center text-xs font-semibold shadow-neo-sm"
+            activeOptions={{ exact: true }}
             activeProps={{ className: "bg-brand-blue text-accent-foreground" }}
           >
             {item.label}

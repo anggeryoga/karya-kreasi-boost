@@ -13,9 +13,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <Link to="/" className="group flex items-center gap-3 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring">
-          <span className="grid h-11 w-11 place-items-center rounded-lg border bg-brand-yellow font-black shadow-neo transition-transform group-hover:-translate-y-0.5">
-            KKB
-          </span>
+          <span className="grid h-11 w-11 place-items-center rounded-lg border bg-brand-yellow font-black shadow-neo transition-transform group-hover:-translate-y-0.5">KKB</span>
           <span className="hidden leading-tight sm:block">
             <span className="block text-sm font-black">Karya Kreasi Bersama</span>
             <span className="block text-xs font-bold text-muted-foreground">Gerobak modern siap pakai</span>
@@ -23,19 +21,12 @@ export function SiteHeader() {
         </Link>
         <nav className="hidden items-center gap-2 md:flex" aria-label="Navigasi utama">
           {navItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="rounded-md border bg-card px-4 py-2 text-sm font-black shadow-neo-sm transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
-              activeProps={{ className: "bg-brand-purple" }}
-            >
+            <Link key={item.to} to={item.to} className="rounded-md border bg-card px-4 py-2 text-sm font-black shadow-neo-sm transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring" activeProps={{ className: "bg-brand-purple" }}>
               {item.label}
             </Link>
           ))}
         </nav>
-        <a className="btn-neo btn-neo-primary hidden sm:inline-flex" href={makeWhatsappLink()} target="_blank" rel="noreferrer">
-          WhatsApp
-        </a>
+        <a className="btn-neo btn-neo-primary hidden sm:inline-flex" href={makeWhatsappLink()} target="_blank" rel="noreferrer">WhatsApp</a>
       </div>
       <nav className="grid grid-cols-4 gap-2 px-4 pb-3 md:hidden" aria-label="Navigasi mobile">
         {navItems.map((item) => (
@@ -63,9 +54,7 @@ export function SiteFooter() {
         </div>
         <div>
           <p className="font-black">Mulai proyek</p>
-          <a className="btn-neo btn-neo-secondary mt-3" href={makeWhatsappLink()} target="_blank" rel="noreferrer">
-            Konsultasi sekarang
-          </a>
+          <a className="btn-neo btn-neo-secondary mt-3" href={makeWhatsappLink()} target="_blank" rel="noreferrer">Konsultasi sekarang</a>
         </div>
       </div>
     </footer>
@@ -73,11 +62,5 @@ export function SiteFooter() {
 }
 
 export function PageFrame({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      <SiteHeader />
-      {children}
-      <SiteFooter />
-    </div>
-  );
+  return <div className="min-h-screen bg-background text-foreground"><SiteHeader />{children}<SiteFooter /></div>;
 }

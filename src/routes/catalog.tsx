@@ -39,11 +39,12 @@ function CatalogPage() {
 
   return (
     <PageFrame>
-      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+      <main>
+        <section className="border-b bg-card">
+          <div className="mx-auto grid max-w-7xl gap-6 px-4 py-12 sm:px-6 md:grid-cols-[1fr_auto] md:items-end lg:px-8">
           <div>
             <p className="badge-neo">Catalog</p>
-            <h1 className="mt-5 text-5xl font-extrabold leading-none">
+            <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
               Pilih gerobak sesuai konsep usaha
             </h1>
             <p className="mt-4 max-w-2xl font-medium leading-relaxed text-muted-foreground">
@@ -63,12 +64,24 @@ function CatalogPage() {
               </button>
             ))}
           </div>
-        </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {filtered.map((product) => (
-            <ProductCard key={product.slug} product={product} onQuickView={setSelected} />
-          ))}
-        </div>
+          </div>
+        </section>
+        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="mb-6 grid gap-3 border-b pb-5 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <h2 className="text-2xl font-bold">Daftar produk</h2>
+              <p className="mt-1 font-medium text-muted-foreground">{filtered.length} model tersedia untuk kategori {filter.toLowerCase()}.</p>
+            </div>
+            <a className="btn-neo btn-neo-accent" href={makeWhatsappLink()} target="_blank" rel="noreferrer">
+              Konsultasi custom
+            </a>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {filtered.map((product) => (
+              <ProductCard key={product.slug} product={product} onQuickView={setSelected} />
+            ))}
+          </div>
+        </section>
       </main>
       {selected && (
         <div

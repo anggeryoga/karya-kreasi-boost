@@ -27,15 +27,15 @@ function AboutPage() {
     <PageFrame>
       <main>
         <section className="border-b bg-brand-yellow">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 md:grid-cols-[0.95fr_1.05fr] lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-[0.95fr_1.05fr] lg:px-8">
             <div>
               <p className="badge-neo bg-card">Brand story</p>
-              <h1 className="mt-5 text-5xl font-extrabold leading-none">
+              <h1 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl">
                 Kami bantu ide jualan jadi gerobak yang siap tampil.
               </h1>
             </div>
-            <div className="neo-card bg-card p-6">
-              <p className="text-xl font-medium leading-relaxed">
+            <div className="rounded-lg border bg-card p-6">
+              <p className="text-lg font-medium leading-relaxed">
                 Karya Kreasi Bersama lahir dari kebutuhan UMKM untuk punya booth yang bukan cuma
                 kuat, tapi juga punya karakter brand. Kami menggabungkan desain, produksi, dan
                 finishing agar gerobak terasa profesional sejak hari pertama jualan.
@@ -45,16 +45,22 @@ function AboutPage() {
         </section>
 
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mb-8 border-b pb-6">
+            <p className="badge-neo">Fondasi kerja</p>
+            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+              Arah produksi yang jelas untuk setiap proyek
+            </h2>
+          </div>
           <div className="grid gap-6 md:grid-cols-2">
             <article className="neo-card neo-card-purple p-7">
-              <h2 className="text-4xl font-extrabold">Visi</h2>
+              <h3 className="text-3xl font-extrabold">Visi</h3>
               <p className="mt-4 text-lg font-medium leading-relaxed text-muted-foreground">
                 Menjadi partner kreatif yang membuat bisnis kecil terlihat berani, rapi, dan siap
                 bersaing di ruang publik.
               </p>
             </article>
             <article className="neo-card neo-card-blue p-7">
-              <h2 className="text-4xl font-extrabold">Misi</h2>
+              <h3 className="text-3xl font-extrabold">Misi</h3>
               <p className="mt-4 text-lg font-medium leading-relaxed text-muted-foreground">
                 Mendesain gerobak yang ergonomis, memproduksi dengan material tepat, dan menjaga
                 komunikasi jelas dari konsep sampai serah terima.

@@ -39,36 +39,56 @@ function CatalogPage() {
 
   return (
     <PageFrame>
-      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
-          <div>
-            <p className="badge-neo">Catalog</p>
-            <h1 className="mt-5 text-5xl font-extrabold leading-none">
-              Pilih gerobak sesuai konsep usaha
-            </h1>
-            <p className="mt-4 max-w-2xl font-medium leading-relaxed text-muted-foreground">
-              Filter model, lihat spesifikasi cepat, lalu lanjut konsultasi untuk ukuran dan
-              finishing custom.
-            </p>
+      <main>
+        <section className="border-b bg-card">
+          <div className="mx-auto grid max-w-7xl gap-6 px-4 py-12 sm:px-6 md:grid-cols-[1fr_auto] md:items-end lg:px-8">
+            <div>
+              <p className="badge-neo">Catalog</p>
+              <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
+                Pilih gerobak sesuai konsep usaha
+              </h1>
+              <p className="mt-4 max-w-2xl font-medium leading-relaxed text-muted-foreground">
+                Filter model, lihat spesifikasi cepat, lalu lanjut konsultasi untuk ukuran dan
+                finishing custom.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {filters.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setFilter(item)}
+                  className={`btn-neo ${filter === item ? "btn-neo-primary" : "btn-neo-ghost"}`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {filters.map((item) => (
-              <button
-                key={item}
-                type="button"
-                onClick={() => setFilter(item)}
-                className={`btn-neo ${filter === item ? "btn-neo-primary" : "btn-neo-ghost"}`}
-              >
-                {item}
-              </button>
+        </section>
+        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="mb-6 grid gap-3 border-b pb-5 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <h2 className="text-2xl font-bold">Daftar produk</h2>
+              <p className="mt-1 font-medium text-muted-foreground">
+                {filtered.length} model tersedia untuk kategori {filter.toLowerCase()}.
+              </p>
+            </div>
+            <a
+              className="btn-neo btn-neo-accent"
+              href={makeWhatsappLink()}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Konsultasi custom
+            </a>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {filtered.map((product) => (
+              <ProductCard key={product.slug} product={product} onQuickView={setSelected} />
             ))}
           </div>
-        </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {filtered.map((product) => (
-            <ProductCard key={product.slug} product={product} onQuickView={setSelected} />
-          ))}
-        </div>
+        </section>
       </main>
       {selected && (
         <div
@@ -90,7 +110,9 @@ function CatalogPage() {
                 <p className="badge-neo">{selected.category}</p>
                 <h2 className="mt-4 text-3xl font-extrabold">{selected.name}</h2>
                 <p className="mt-2 text-2xl font-extrabold">{selected.price}</p>
-                <p className="mt-4 font-medium leading-relaxed text-muted-foreground">{selected.short}</p>
+                <p className="mt-4 font-medium leading-relaxed text-muted-foreground">
+                  {selected.short}
+                </p>
                 <ul className="mt-5 grid gap-2 font-medium">
                   {selected.specs.map((spec) => (
                     <li key={spec} className="rounded-md border bg-muted px-3 py-2">

@@ -140,7 +140,7 @@
     border: 1.3px solid var(--color-border);
     border-radius: calc(var(--radius) - 0.55rem);
     padding: 0.72rem 1rem;
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1;
     box-shadow: var(--shadow-neo-sm);
     transition:
@@ -179,7 +179,7 @@
     background: var(--color-brand-yellow);
     padding: 0.28rem 0.7rem;
     font-size: 0.75rem;
-    font-weight: 900;
+    font-weight: 800;
     box-shadow: var(--shadow-neo-sm);
   }
   .dot-grid {

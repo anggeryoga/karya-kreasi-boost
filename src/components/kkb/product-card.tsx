@@ -30,11 +30,11 @@ export function ProductCard({
       <div className="flex flex-1 flex-col gap-4 p-5">
         <div>
           <p className="badge-neo">{product.category}</p>
-          <h2 className="mt-3 text-2xl font-black leading-tight">{product.name}</h2>
-          <p className="mt-2 text-sm font-bold text-muted-foreground">{product.short}</p>
+          <h2 className="mt-3 text-2xl font-extrabold leading-tight">{product.name}</h2>
+          <p className="mt-2 text-sm font-medium leading-relaxed text-muted-foreground">{product.short}</p>
         </div>
         <div className="mt-auto flex flex-wrap items-center justify-between gap-3">
-          <p className="text-xl font-black">{product.price}</p>
+          <p className="text-xl font-extrabold">{product.price}</p>
           <div className="flex gap-2">
             {onQuickView && (
               <button

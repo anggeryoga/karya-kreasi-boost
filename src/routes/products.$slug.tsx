@@ -63,21 +63,21 @@ function ProductDetailPage() {
           </div>
           <div>
             <p className="badge-neo">{product.category}</p>
-            <h1 className="mt-5 text-5xl font-black leading-none">{product.name}</h1>
-            <p className="mt-4 text-3xl font-black">{product.price}</p>
-            <p className="mt-5 text-lg font-bold text-muted-foreground">{product.short}</p>
+            <h1 className="mt-5 text-5xl font-extrabold leading-none">{product.name}</h1>
+            <p className="mt-4 text-3xl font-extrabold">{product.price}</p>
+            <p className="mt-5 text-lg font-medium leading-relaxed text-muted-foreground">{product.short}</p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="neo-card p-5">
-                <h2 className="text-2xl font-black">Spesifikasi</h2>
-                <ul className="mt-4 grid gap-2 font-bold text-muted-foreground">
+                <h2 className="text-2xl font-extrabold">Spesifikasi</h2>
+                <ul className="mt-4 grid gap-2 font-medium text-muted-foreground">
                   {product.specs.map((item) => (
                     <li key={item}>• {item}</li>
                   ))}
                 </ul>
               </div>
               <div className="neo-card neo-card-yellow p-5">
-                <h2 className="text-2xl font-black">Material</h2>
-                <ul className="mt-4 grid gap-2 font-bold text-muted-foreground">
+                <h2 className="text-2xl font-extrabold">Material</h2>
+                <ul className="mt-4 grid gap-2 font-medium text-muted-foreground">
                   {product.materials.map((item) => (
                     <li key={item}>• {item}</li>
                   ))}
@@ -95,7 +95,7 @@ function ProductDetailPage() {
           </div>
         </section>
         <section className="mt-16">
-          <h2 className="text-4xl font-black">Produk terkait</h2>
+          <h2 className="text-4xl font-extrabold">Produk terkait</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {related.map((item) => (
               <ProductCard key={item.slug} product={item} />

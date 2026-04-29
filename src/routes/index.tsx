@@ -31,10 +31,10 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1fr_0.9fr] lg:px-8 lg:py-20">
             <div className="relative z-10">
               <p className="badge-neo">KKB • Karya Kreasi Bersama</p>
-              <h1 className="mt-6 max-w-4xl text-5xl font-black leading-[0.95] sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 max-w-4xl text-5xl font-extrabold leading-[0.98] sm:text-6xl lg:text-7xl">
                 Solusi Gerobak Usaha Modern & Siap Pakai
               </h1>
-              <p className="mt-6 max-w-2xl text-lg font-bold text-muted-foreground">
+              <p className="mt-6 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground">
                 Bangun booth jualan yang rapi, kuat, dan langsung siap tampil—mulai dari gerobak
                 kopi, makanan, sampai pop-up retail.
               </p>
@@ -63,7 +63,7 @@ function Index() {
             </div>
           </div>
           <div className="overflow-hidden border-t bg-brand-blue py-3 text-primary-foreground">
-            <div className="marquee-strip flex w-[200%] gap-8 text-lg font-black uppercase">
+            <div className="marquee-strip flex w-[200%] gap-8 text-lg font-extrabold uppercase">
               {Array.from({ length: 10 }).map((_, index) => (
                 <span key={index}>Custom design • Rangka kuat • Siap jualan • Branding rapi</span>
               ))}
@@ -75,7 +75,7 @@ function Index() {
           <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="badge-neo">Featured products</p>
-              <h2 className="mt-4 text-4xl font-black">Model favorit UMKM</h2>
+              <h2 className="mt-4 text-4xl font-extrabold">Model favorit UMKM</h2>
             </div>
             <Link to="/catalog" className="btn-neo btn-neo-ghost">
               Semua produk
@@ -90,7 +90,7 @@ function Index() {
 
         <section className="border-y bg-brand-purple py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-black">Kenapa pilih KKB?</h2>
+            <h2 className="text-4xl font-extrabold">Kenapa pilih KKB?</h2>
             <div className="mt-8 grid gap-5 md:grid-cols-3">
               {[
                 [
@@ -110,11 +110,11 @@ function Index() {
                 ],
               ].map(([num, title, body]) => (
                 <article key={num} className="neo-card bg-card p-6">
-                  <span className="grid h-12 w-12 place-items-center rounded-md border bg-brand-yellow text-xl font-black shadow-neo-sm">
+                  <span className="grid h-12 w-12 place-items-center rounded-md border bg-brand-yellow text-xl font-extrabold shadow-neo-sm">
                     {num}
                   </span>
-                  <h3 className="mt-5 text-2xl font-black">{title}</h3>
-                  <p className="mt-2 font-bold text-muted-foreground">{body}</p>
+                  <h3 className="mt-5 text-2xl font-extrabold">{title}</h3>
+                  <p className="mt-2 font-medium leading-relaxed text-muted-foreground">{body}</p>
                 </article>
               ))}
             </div>
@@ -130,8 +130,8 @@ function Index() {
               key={quote}
               className={`neo-card p-7 ${index === 0 ? "neo-card-blue" : "neo-card-yellow"}`}
             >
-              <p className="text-2xl font-black leading-tight">“{quote}”</p>
-              <footer className="mt-5 font-black text-muted-foreground">
+              <p className="text-2xl font-semibold leading-tight">“{quote}”</p>
+              <footer className="mt-5 font-semibold text-muted-foreground">
                 Owner UMKM #{index + 1}
               </footer>
             </blockquote>
@@ -142,8 +142,8 @@ function Index() {
           <div className="neo-card bg-brand-yellow p-8 md:p-12">
             <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
               <div>
-                <h2 className="text-4xl font-black">Siap punya gerobak yang langsung jualan?</h2>
-                <p className="mt-3 max-w-2xl font-bold text-muted-foreground">
+                <h2 className="text-4xl font-extrabold">Siap punya gerobak yang langsung jualan?</h2>
+                <p className="mt-3 max-w-2xl font-medium leading-relaxed text-muted-foreground">
                   Kirim konsep usaha kamu, kami bantu rekomendasikan ukuran, material, dan layout
                   terbaik.
                 </p>

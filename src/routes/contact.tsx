@@ -28,8 +28,8 @@ function ContactPage() {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <section>
             <p className="badge-neo">Contact</p>
-            <h1 className="mt-5 text-5xl font-black leading-none">Ceritakan konsep usaha kamu.</h1>
-            <p className="mt-4 text-lg font-bold text-muted-foreground">
+            <h1 className="mt-5 text-5xl font-extrabold leading-none">Ceritakan konsep usaha kamu.</h1>
+            <p className="mt-4 text-lg font-medium leading-relaxed text-muted-foreground">
               Isi form ringkas atau langsung klik WhatsApp untuk diskusi ukuran, material, warna,
               dan estimasi produksi.
             </p>
@@ -42,33 +42,33 @@ function ContactPage() {
               Chat WhatsApp
             </a>
             <div className="neo-card neo-card-yellow mt-8 p-6">
-              <p className="font-black">Workshop KKB</p>
-              <p className="mt-2 font-bold text-muted-foreground">
+              <p className="font-extrabold">Workshop KKB</p>
+              <p className="mt-2 font-medium text-muted-foreground">
                 Jl. Workshop Kreatif No. 18, Indonesia
               </p>
-              <p className="mt-1 font-bold text-muted-foreground">Senin–Sabtu, 09.00–17.00</p>
+              <p className="mt-1 font-medium text-muted-foreground">Senin–Sabtu, 09.00–17.00</p>
             </div>
           </section>
           <section className="neo-card bg-card p-5">
             <form className="grid gap-4" onSubmit={(event) => event.preventDefault()}>
-              <label className="grid gap-2 font-black">
+              <label className="grid gap-2 font-semibold">
                 Nama
                 <input
-                  className="rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring"
+                  className="rounded-md border bg-background px-4 py-3 font-medium outline-none focus:ring-4 focus:ring-ring"
                   placeholder="Nama kamu"
                 />
               </label>
-              <label className="grid gap-2 font-black">
+              <label className="grid gap-2 font-semibold">
                 WhatsApp
                 <input
-                  className="rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring"
+                  className="rounded-md border bg-background px-4 py-3 font-medium outline-none focus:ring-4 focus:ring-ring"
                   placeholder="08xx xxxx xxxx"
                 />
               </label>
-              <label className="grid gap-2 font-black">
+              <label className="grid gap-2 font-semibold">
                 Jenis usaha
                 <select
-                  className="rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring"
+                  className="rounded-md border bg-background px-4 py-3 font-medium outline-none focus:ring-4 focus:ring-ring"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -80,10 +80,10 @@ function ContactPage() {
                   <option>Lainnya</option>
                 </select>
               </label>
-              <label className="grid gap-2 font-black">
+              <label className="grid gap-2 font-semibold">
                 Kebutuhan
                 <textarea
-                  className="min-h-32 rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring"
+                  className="min-h-32 rounded-md border bg-background px-4 py-3 font-medium outline-none focus:ring-4 focus:ring-ring"
                   placeholder="Ceritakan ukuran, warna, dan konsep brand"
                 />
               </label>

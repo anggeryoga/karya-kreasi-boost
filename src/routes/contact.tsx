@@ -24,11 +24,12 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <PageFrame>
-      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+      <main>
+        <section className="border-b bg-card">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <section>
             <p className="badge-neo">Contact</p>
-            <h1 className="mt-5 text-5xl font-extrabold leading-none">Ceritakan konsep usaha kamu.</h1>
+            <h1 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl">Ceritakan konsep usaha kamu.</h1>
             <p className="mt-4 text-lg font-medium leading-relaxed text-muted-foreground">
               Isi form ringkas atau langsung klik WhatsApp untuk diskusi ukuran, material, warna,
               dan estimasi produksi.
@@ -42,7 +43,7 @@ function ContactPage() {
               Chat WhatsApp
             </a>
             <div className="neo-card neo-card-yellow mt-8 p-6">
-              <p className="font-extrabold">Workshop KKB</p>
+              <p className="font-bold">Workshop KKB</p>
               <p className="mt-2 font-medium text-muted-foreground">
                 Jl. Workshop Kreatif No. 18, Indonesia
               </p>
@@ -92,8 +93,14 @@ function ContactPage() {
               </button>
             </form>
           </section>
-        </div>
-        <section className="mt-10 overflow-hidden rounded-lg border shadow-neo">
+          </div>
+        </section>
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="mb-6 border-b pb-5">
+            <p className="badge-neo">Lokasi</p>
+            <h2 className="mt-4 text-3xl font-extrabold">Area workshop & konsultasi</h2>
+          </div>
+          <div className="overflow-hidden rounded-lg border shadow-neo">
           <iframe
             title="Peta lokasi KKB"
             src="https://www.google.com/maps?q=Jakarta%2C%20Indonesia&output=embed"
@@ -101,6 +108,7 @@ function ContactPage() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
+          </div>
         </section>
       </main>
     </PageFrame>

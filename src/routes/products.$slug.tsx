@@ -9,14 +9,18 @@ export const Route = createFileRoute("/products/$slug")({
     if (!product) throw notFound();
     return product;
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData.name} KKB` },
-      { name: "description", content: `${loaderData.name} dari KKB: ${loaderData.short}` },
-      { property: "og:title", content: `${loaderData.name} KKB` },
-      { property: "og:description", content: loaderData.short },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    const product = loaderData ?? products[0];
+
+    return {
+      meta: [
+        { title: `${product.name} KKB` },
+        { name: "description", content: `${product.name} dari KKB: ${product.short}` },
+        { property: "og:title", content: `${product.name} KKB` },
+        { property: "og:description", content: product.short },
+      ],
+    };
+  },
   component: ProductDetailPage,
 });
 

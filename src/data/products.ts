@@ -22,7 +22,12 @@ export const products: Product[] = [
     name: "Gerobak Kopi Modular",
     category: "Minuman",
     price: "Mulai Rp 7,8 jt",
-    specs: ["180 × 75 × 210 cm", "Rak servis stainless", "Lampu kerja LED", "Panel branding custom"],
+    specs: [
+      "180 × 75 × 210 cm",
+      "Rak servis stainless",
+      "Lampu kerja LED",
+      "Panel branding custom",
+    ],
     materials: ["Rangka besi hollow", "Multiplek HPL", "Top table stainless", "Roda heavy duty"],
     short: "Gerobak minuman modern untuk kopi, teh, dan es kekinian dengan layout kerja ringkas.",
     image: gerobakKopi,

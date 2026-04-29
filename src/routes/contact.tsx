@@ -6,9 +6,16 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Kontak KKB" },
-      { name: "description", content: "Hubungi KKB untuk konsultasi gerobak usaha modern, permintaan harga, dan jadwal produksi." },
+      {
+        name: "description",
+        content:
+          "Hubungi KKB untuk konsultasi gerobak usaha modern, permintaan harga, dan jadwal produksi.",
+      },
       { property: "og:title", content: "Kontak KKB" },
-      { property: "og:description", content: "Konsultasikan kebutuhan gerobak usaha modern bersama Karya Kreasi Bersama." },
+      {
+        property: "og:description",
+        content: "Konsultasikan kebutuhan gerobak usaha modern bersama Karya Kreasi Bersama.",
+      },
     ],
   }),
   component: ContactPage,
@@ -22,26 +29,78 @@ function ContactPage() {
           <section>
             <p className="badge-neo">Contact</p>
             <h1 className="mt-5 text-5xl font-black leading-none">Ceritakan konsep usaha kamu.</h1>
-            <p className="mt-4 text-lg font-bold text-muted-foreground">Isi form ringkas atau langsung klik WhatsApp untuk diskusi ukuran, material, warna, dan estimasi produksi.</p>
-            <a className="btn-neo btn-neo-accent mt-8" href={makeWhatsappLink()} target="_blank" rel="noreferrer">Chat WhatsApp</a>
+            <p className="mt-4 text-lg font-bold text-muted-foreground">
+              Isi form ringkas atau langsung klik WhatsApp untuk diskusi ukuran, material, warna,
+              dan estimasi produksi.
+            </p>
+            <a
+              className="btn-neo btn-neo-accent mt-8"
+              href={makeWhatsappLink()}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Chat WhatsApp
+            </a>
             <div className="neo-card neo-card-yellow mt-8 p-6">
               <p className="font-black">Workshop KKB</p>
-              <p className="mt-2 font-bold text-muted-foreground">Jl. Workshop Kreatif No. 18, Indonesia</p>
+              <p className="mt-2 font-bold text-muted-foreground">
+                Jl. Workshop Kreatif No. 18, Indonesia
+              </p>
               <p className="mt-1 font-bold text-muted-foreground">Senin–Sabtu, 09.00–17.00</p>
             </div>
           </section>
           <section className="neo-card bg-card p-5">
             <form className="grid gap-4" onSubmit={(event) => event.preventDefault()}>
-              <label className="grid gap-2 font-black">Nama<input className="rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring" placeholder="Nama kamu" /></label>
-              <label className="grid gap-2 font-black">WhatsApp<input className="rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring" placeholder="08xx xxxx xxxx" /></label>
-              <label className="grid gap-2 font-black">Jenis usaha<select className="rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring" defaultValue=""><option value="" disabled>Pilih kategori</option><option>Minuman</option><option>Makanan</option><option>Retail</option><option>Lainnya</option></select></label>
-              <label className="grid gap-2 font-black">Kebutuhan<textarea className="min-h-32 rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring" placeholder="Ceritakan ukuran, warna, dan konsep brand" /></label>
-              <button className="btn-neo btn-neo-primary w-fit" type="submit">Kirim brief</button>
+              <label className="grid gap-2 font-black">
+                Nama
+                <input
+                  className="rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring"
+                  placeholder="Nama kamu"
+                />
+              </label>
+              <label className="grid gap-2 font-black">
+                WhatsApp
+                <input
+                  className="rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring"
+                  placeholder="08xx xxxx xxxx"
+                />
+              </label>
+              <label className="grid gap-2 font-black">
+                Jenis usaha
+                <select
+                  className="rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring"
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Pilih kategori
+                  </option>
+                  <option>Minuman</option>
+                  <option>Makanan</option>
+                  <option>Retail</option>
+                  <option>Lainnya</option>
+                </select>
+              </label>
+              <label className="grid gap-2 font-black">
+                Kebutuhan
+                <textarea
+                  className="min-h-32 rounded-md border bg-background px-4 py-3 font-bold outline-none focus:ring-4 focus:ring-ring"
+                  placeholder="Ceritakan ukuran, warna, dan konsep brand"
+                />
+              </label>
+              <button className="btn-neo btn-neo-primary w-fit" type="submit">
+                Kirim brief
+              </button>
             </form>
           </section>
         </div>
         <section className="mt-10 overflow-hidden rounded-lg border shadow-neo">
-          <iframe title="Peta lokasi KKB" src="https://www.google.com/maps?q=Jakarta%2C%20Indonesia&output=embed" className="h-80 w-full" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+          <iframe
+            title="Peta lokasi KKB"
+            src="https://www.google.com/maps?q=Jakarta%2C%20Indonesia&output=embed"
+            className="h-80 w-full"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </section>
       </main>
     </PageFrame>

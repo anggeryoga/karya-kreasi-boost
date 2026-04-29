@@ -7,9 +7,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "KKB Gerobak Usaha Modern" },
-      { name: "description", content: "KKB membuat gerobak usaha modern siap pakai untuk kuliner, minuman, dan retail dengan desain custom profesional." },
+      {
+        name: "description",
+        content:
+          "KKB membuat gerobak usaha modern siap pakai untuk kuliner, minuman, dan retail dengan desain custom profesional.",
+      },
       { property: "og:title", content: "KKB Gerobak Usaha Modern" },
-      { property: "og:description", content: "Solusi gerobak usaha modern dan siap pakai dari Karya Kreasi Bersama." },
+      {
+        property: "og:description",
+        content: "Solusi gerobak usaha modern dan siap pakai dari Karya Kreasi Bersama.",
+      },
     ],
   }),
   component: Index,
@@ -28,20 +35,38 @@ function Index() {
                 Solusi Gerobak Usaha Modern & Siap Pakai
               </h1>
               <p className="mt-6 max-w-2xl text-lg font-bold text-muted-foreground">
-                Bangun booth jualan yang rapi, kuat, dan langsung siap tampil—mulai dari gerobak kopi, makanan, sampai pop-up retail.
+                Bangun booth jualan yang rapi, kuat, dan langsung siap tampil—mulai dari gerobak
+                kopi, makanan, sampai pop-up retail.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link to="/catalog" className="btn-neo btn-neo-primary">Lihat Catalog</Link>
-                <a className="btn-neo btn-neo-accent" href={makeWhatsappLink()} target="_blank" rel="noreferrer">Konsultasi WhatsApp</a>
+                <Link to="/catalog" className="btn-neo btn-neo-primary">
+                  Lihat Catalog
+                </Link>
+                <a
+                  className="btn-neo btn-neo-accent"
+                  href={makeWhatsappLink()}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Konsultasi WhatsApp
+                </a>
               </div>
             </div>
             <div className="neo-card neo-card-yellow p-3">
-              <img src={products[0].image} alt="Gerobak kopi modular KKB" width={1280} height={960} className="aspect-[4/3] w-full rounded-lg border object-cover" />
+              <img
+                src={products[0].image}
+                alt="Gerobak kopi modular KKB"
+                width={1280}
+                height={960}
+                className="aspect-[4/3] w-full rounded-lg border object-cover"
+              />
             </div>
           </div>
           <div className="overflow-hidden border-t bg-brand-blue py-3 text-primary-foreground">
             <div className="marquee-strip flex w-[200%] gap-8 text-lg font-black uppercase">
-              {Array.from({ length: 10 }).map((_, index) => <span key={index}>Custom design • Rangka kuat • Siap jualan • Branding rapi</span>)}
+              {Array.from({ length: 10 }).map((_, index) => (
+                <span key={index}>Custom design • Rangka kuat • Siap jualan • Branding rapi</span>
+              ))}
             </div>
           </div>
         </section>
@@ -52,10 +77,14 @@ function Index() {
               <p className="badge-neo">Featured products</p>
               <h2 className="mt-4 text-4xl font-black">Model favorit UMKM</h2>
             </div>
-            <Link to="/catalog" className="btn-neo btn-neo-ghost">Semua produk</Link>
+            <Link to="/catalog" className="btn-neo btn-neo-ghost">
+              Semua produk
+            </Link>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {products.map((product) => <ProductCard key={product.slug} product={product} />)}
+            {products.map((product) => (
+              <ProductCard key={product.slug} product={product} />
+            ))}
           </div>
         </section>
 
@@ -64,12 +93,26 @@ function Index() {
             <h2 className="text-4xl font-black">Kenapa pilih KKB?</h2>
             <div className="mt-8 grid gap-5 md:grid-cols-3">
               {[
-                ["01", "Layout efisien", "Setiap gerobak dirancang mengikuti alur kerja jualan agar servis lebih cepat."],
-                ["02", "Material tahan pakai", "Rangka, panel, dan top table dipilih untuk aktivitas harian yang padat."],
-                ["03", "Visual brand kuat", "Warna, panel, dan finishing dibuat agar produk kamu mudah dikenali."],
+                [
+                  "01",
+                  "Layout efisien",
+                  "Setiap gerobak dirancang mengikuti alur kerja jualan agar servis lebih cepat.",
+                ],
+                [
+                  "02",
+                  "Material tahan pakai",
+                  "Rangka, panel, dan top table dipilih untuk aktivitas harian yang padat.",
+                ],
+                [
+                  "03",
+                  "Visual brand kuat",
+                  "Warna, panel, dan finishing dibuat agar produk kamu mudah dikenali.",
+                ],
               ].map(([num, title, body]) => (
                 <article key={num} className="neo-card bg-card p-6">
-                  <span className="grid h-12 w-12 place-items-center rounded-md border bg-brand-yellow text-xl font-black shadow-neo-sm">{num}</span>
+                  <span className="grid h-12 w-12 place-items-center rounded-md border bg-brand-yellow text-xl font-black shadow-neo-sm">
+                    {num}
+                  </span>
                   <h3 className="mt-5 text-2xl font-black">{title}</h3>
                   <p className="mt-2 font-bold text-muted-foreground">{body}</p>
                 </article>
@@ -79,10 +122,18 @@ function Index() {
         </section>
 
         <section className="mx-auto grid max-w-7xl gap-6 px-4 py-16 sm:px-6 md:grid-cols-2 lg:px-8">
-          {["Gerobaknya kokoh, warna brand kami keluar banget. Pembukaan booth jadi terlihat profesional.", "Tim KKB bantu susun kebutuhan dari awal sampai produksi. Hasilnya siap dipakai tanpa ribet."].map((quote, index) => (
-            <blockquote key={quote} className={`neo-card p-7 ${index === 0 ? "neo-card-blue" : "neo-card-yellow"}`}>
+          {[
+            "Gerobaknya kokoh, warna brand kami keluar banget. Pembukaan booth jadi terlihat profesional.",
+            "Tim KKB bantu susun kebutuhan dari awal sampai produksi. Hasilnya siap dipakai tanpa ribet.",
+          ].map((quote, index) => (
+            <blockquote
+              key={quote}
+              className={`neo-card p-7 ${index === 0 ? "neo-card-blue" : "neo-card-yellow"}`}
+            >
               <p className="text-2xl font-black leading-tight">“{quote}”</p>
-              <footer className="mt-5 font-black text-muted-foreground">Owner UMKM #{index + 1}</footer>
+              <footer className="mt-5 font-black text-muted-foreground">
+                Owner UMKM #{index + 1}
+              </footer>
             </blockquote>
           ))}
         </section>
@@ -92,9 +143,19 @@ function Index() {
             <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <h2 className="text-4xl font-black">Siap punya gerobak yang langsung jualan?</h2>
-                <p className="mt-3 max-w-2xl font-bold text-muted-foreground">Kirim konsep usaha kamu, kami bantu rekomendasikan ukuran, material, dan layout terbaik.</p>
+                <p className="mt-3 max-w-2xl font-bold text-muted-foreground">
+                  Kirim konsep usaha kamu, kami bantu rekomendasikan ukuran, material, dan layout
+                  terbaik.
+                </p>
               </div>
-              <a className="btn-neo btn-neo-accent" href={makeWhatsappLink()} target="_blank" rel="noreferrer">Mulai konsultasi</a>
+              <a
+                className="btn-neo btn-neo-accent"
+                href={makeWhatsappLink()}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Mulai konsultasi
+              </a>
             </div>
           </div>
         </section>

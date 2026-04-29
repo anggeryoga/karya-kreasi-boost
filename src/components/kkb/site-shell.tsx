@@ -9,7 +9,7 @@ const navItems = [
   { to: "/contact", label: "Kontak" },
 ] as const;
 
-const mobileNavItems = navItems.filter((item) => item.to !== "/");
+const secondaryNavItems = navItems.filter((item) => item.to !== "/");
 
 export function SiteHeader() {
   return (
@@ -30,7 +30,7 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="hidden items-center gap-2 md:flex" aria-label="Navigasi utama">
-          {navItems.map((item) => (
+          {secondaryNavItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
@@ -52,7 +52,7 @@ export function SiteHeader() {
         </a>
       </div>
       <nav className="grid grid-cols-3 gap-2 px-4 pb-3 md:hidden" aria-label="Navigasi mobile">
-        {mobileNavItems.map((item) => (
+        {secondaryNavItems.map((item) => (
           <Link
             key={item.to}
             to={item.to}

@@ -87,7 +87,9 @@ function Index() {
           <div className="mb-8 grid gap-4 border-b pb-6 md:grid-cols-[1fr_auto] md:items-end">
             <div>
               <p className="badge-neo">Katalog utama</p>
-              <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">Model gerobak siap produksi</h2>
+              <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+                Model gerobak siap produksi
+              </h2>
               <p className="mt-3 max-w-2xl font-medium leading-relaxed text-muted-foreground">
                 Pilihan awal untuk kebutuhan booth minuman, makanan, dan retail dengan opsi custom.
               </p>
@@ -108,7 +110,9 @@ function Index() {
             <div className="grid gap-4 md:grid-cols-[0.8fr_1.2fr] md:items-end">
               <div>
                 <p className="badge-neo bg-card">Keunggulan</p>
-                <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">Produksi lebih terarah dan rapi</h2>
+                <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+                  Produksi lebih terarah dan rapi
+                </h2>
               </div>
               <p className="font-medium leading-relaxed text-muted-foreground">
                 Setiap proyek disusun dari kebutuhan operasional, tampilan brand, sampai kesiapan
@@ -149,15 +153,29 @@ function Index() {
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <p className="badge-neo">Alur kerja</p>
-              <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">Proses jelas dari brief sampai serah terima</h2>
+              <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+                Proses jelas dari brief sampai serah terima
+              </h2>
             </div>
             <div className="grid gap-4">
               {[
-                ["Brief kebutuhan", "Kami petakan jenis usaha, ukuran area, kebutuhan storage, dan arah visual brand."],
-                ["Desain & produksi", "Layout, material, warna, dan finishing disiapkan agar gerobak rapi serta ergonomis."],
-                ["Final check", "Unit dicek sebelum serah terima supaya siap digunakan untuk pembukaan booth."],
+                [
+                  "Brief kebutuhan",
+                  "Kami petakan jenis usaha, ukuran area, kebutuhan storage, dan arah visual brand.",
+                ],
+                [
+                  "Desain & produksi",
+                  "Layout, material, warna, dan finishing disiapkan agar gerobak rapi serta ergonomis.",
+                ],
+                [
+                  "Final check",
+                  "Unit dicek sebelum serah terima supaya siap digunakan untuk pembukaan booth.",
+                ],
               ].map(([title, body], index) => (
-                <article key={title} className="grid gap-4 rounded-lg border bg-card p-5 sm:grid-cols-[3rem_1fr]">
+                <article
+                  key={title}
+                  className="grid gap-4 rounded-lg border bg-card p-5 sm:grid-cols-[3rem_1fr]"
+                >
                   <span className="grid h-12 w-12 place-items-center rounded-md border bg-brand-blue text-base font-extrabold text-accent-foreground shadow-neo-sm">
                     {index + 1}
                   </span>
@@ -175,7 +193,9 @@ function Index() {
           <div className="neo-card bg-brand-yellow p-8 md:p-12">
             <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
               <div>
-                <h2 className="text-4xl font-extrabold">Siap punya gerobak yang langsung jualan?</h2>
+                <h2 className="text-4xl font-extrabold">
+                  Siap punya gerobak yang langsung jualan?
+                </h2>
                 <p className="mt-3 max-w-2xl font-medium leading-relaxed text-muted-foreground">
                   Kirim konsep usaha kamu, kami bantu rekomendasikan ukuran, material, dan layout
                   terbaik.

@@ -113,8 +113,8 @@ function Index() {
                 <p className="eyebrow">Keunggulan</p>
                 <h2 className="section-title">Produksi lebih terarah dan rapi</h2>
                 <p className="section-lead">
-                  Setiap proyek disusun dari kebutuhan operasional, tampilan brand, sampai
-                  kesiapan pemakaian di lapangan.
+                  Setiap proyek disusun dari kebutuhan operasional, tampilan brand, sampai kesiapan
+                  pemakaian di lapangan.
                 </p>
               </div>
             </div>
@@ -153,9 +153,7 @@ function Index() {
             <div className="section-header">
               <div>
                 <p className="eyebrow">Alur kerja</p>
-                <h2 className="section-title">
-                  Proses jelas dari brief sampai serah terima
-                </h2>
+                <h2 className="section-title">Proses jelas dari brief sampai serah terima</h2>
                 <p className="section-lead">
                   Tiga tahap utama untuk memastikan setiap unit siap operasional.
                 </p>
@@ -196,23 +194,23 @@ function Index() {
         <section className="section-shell pt-0">
           <div className="section-container">
             <div className="neo-card bg-brand-yellow p-8 md:p-12">
-            <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-              <div>
-                <h2 className="section-title">Siap punya gerobak yang langsung jualan?</h2>
-                <p className="mt-3 max-w-2xl font-medium leading-relaxed text-muted-foreground">
-                  Kirim konsep usaha kamu, kami bantu rekomendasikan ukuran, material, dan layout
-                  terbaik.
-                </p>
+              <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+                <div>
+                  <h2 className="section-title">Siap punya gerobak yang langsung jualan?</h2>
+                  <p className="mt-3 max-w-2xl font-medium leading-relaxed text-muted-foreground">
+                    Kirim konsep usaha kamu, kami bantu rekomendasikan ukuran, material, dan layout
+                    terbaik.
+                  </p>
+                </div>
+                <a
+                  className="btn-neo btn-neo-accent"
+                  href={makeWhatsappLink()}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Mulai konsultasi
+                </a>
               </div>
-              <a
-                className="btn-neo btn-neo-accent"
-                href={makeWhatsappLink()}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Mulai konsultasi
-              </a>
-            </div>
             </div>
           </div>
         </section>

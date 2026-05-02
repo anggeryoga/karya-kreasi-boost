@@ -85,9 +85,9 @@ function CatalogPage() {
               </a>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
-            {filtered.map((product) => (
-              <ProductCard key={product.slug} product={product} onQuickView={setSelected} />
-            ))}
+              {filtered.map((product) => (
+                <ProductCard key={product.slug} product={product} onQuickView={setSelected} />
+              ))}
             </div>
           </div>
         </section>

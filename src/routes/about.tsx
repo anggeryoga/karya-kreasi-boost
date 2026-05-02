@@ -65,15 +65,15 @@ function AboutPage() {
               <article className="neo-card neo-card-purple p-7">
                 <h3 className="text-2xl font-extrabold">Visi</h3>
                 <p className="mt-4 font-medium leading-relaxed text-muted-foreground">
-                  Menjadi partner kreatif yang membuat bisnis kecil terlihat berani, rapi, dan
-                  siap bersaing di ruang publik.
+                  Menjadi partner kreatif yang membuat bisnis kecil terlihat berani, rapi, dan siap
+                  bersaing di ruang publik.
                 </p>
               </article>
               <article className="neo-card neo-card-blue p-7">
                 <h3 className="text-2xl font-extrabold">Misi</h3>
                 <p className="mt-4 font-medium leading-relaxed text-muted-foreground">
-                  Mendesain gerobak yang ergonomis, memproduksi dengan material tepat, dan
-                  menjaga komunikasi jelas dari konsep sampai serah terima.
+                  Mendesain gerobak yang ergonomis, memproduksi dengan material tepat, dan menjaga
+                  komunikasi jelas dari konsep sampai serah terima.
                 </p>
               </article>
             </div>

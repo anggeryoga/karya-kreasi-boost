@@ -20,10 +20,16 @@ export function SiteHeader() {
           className="group flex min-w-0 items-center gap-3 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
         >
           <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg border bg-card p-1.5 transition-transform group-hover:-translate-y-0.5 sm:h-14 sm:w-14">
-            <img src={kkbLogo} alt="Logo Karya Kreasi Bersama" className="h-full w-full object-contain" />
+            <img
+              src={kkbLogo}
+              alt="Logo Karya Kreasi Bersama"
+              className="h-full w-full object-contain"
+            />
           </span>
           <span className="min-w-0 leading-tight">
-            <span className="block truncate text-sm font-extrabold sm:text-base">Karya Kreasi Bersama</span>
+            <span className="block truncate text-sm font-extrabold sm:text-base">
+              Karya Kreasi Bersama
+            </span>
             <span className="block truncate text-xs font-medium text-muted-foreground">
               Gerobak modern siap pakai
             </span>

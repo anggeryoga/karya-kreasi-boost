@@ -65,7 +65,9 @@ function ProductDetailPage() {
             <p className="badge-neo">{product.category}</p>
             <h1 className="mt-5 text-5xl font-extrabold leading-none">{product.name}</h1>
             <p className="mt-4 text-3xl font-extrabold">{product.price}</p>
-            <p className="mt-5 text-lg font-medium leading-relaxed text-muted-foreground">{product.short}</p>
+            <p className="mt-5 text-lg font-medium leading-relaxed text-muted-foreground">
+              {product.short}
+            </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="neo-card p-5">
                 <h2 className="text-2xl font-extrabold">Spesifikasi</h2>

@@ -20,10 +20,16 @@ export function SiteHeader() {
           className="group flex min-w-0 items-center gap-3 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
         >
           <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg border bg-card p-1.5 transition-transform group-hover:-translate-y-0.5 sm:h-14 sm:w-14">
-            <img src={kkbLogo} alt="Logo Karya Kreasi Bersama" className="h-full w-full object-contain" />
+            <img
+              src={kkbLogo}
+              alt="Logo Karya Kreasi Bersama"
+              className="h-full w-full object-contain"
+            />
           </span>
           <span className="min-w-0 leading-tight">
-            <span className="block truncate text-sm font-extrabold sm:text-base">Karya Kreasi Bersama</span>
+            <span className="block truncate text-sm font-extrabold sm:text-base">
+              Karya Kreasi Bersama
+            </span>
             <span className="block truncate text-xs font-medium text-muted-foreground">
               Gerobak modern siap pakai
             </span>
@@ -71,33 +77,65 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="border-t bg-card text-foreground">
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
-        <div className="rounded-lg border bg-brand-yellow p-6 text-foreground shadow-neo">
-          <div className="flex items-center gap-3">
-            <img src={kkbLogo} alt="Logo KKB" className="h-12 w-12 rounded-md border bg-card object-contain p-1" />
-            <p className="text-xl font-extrabold">KKB</p>
+      <div className="section-container py-12">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <div>
+            <div className="flex items-center gap-3">
+              <img
+                src={kkbLogo}
+                alt="Logo KKB"
+                className="h-12 w-12 rounded-md border bg-card object-contain p-1"
+              />
+              <p className="text-lg font-extrabold">Karya Kreasi Bersama</p>
+            </div>
+            <p className="mt-4 max-w-sm text-sm font-medium leading-relaxed text-muted-foreground">
+              Solusi gerobak usaha modern & siap pakai untuk brand kuliner, minuman, dan retail.
+            </p>
           </div>
-          <p className="mt-3 max-w-md font-medium leading-relaxed">
-            Solusi Gerobak Usaha Modern & Siap Pakai untuk brand kuliner, minuman, dan retail.
-          </p>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              Navigasi
+            </p>
+            <ul className="mt-4 grid gap-2 text-sm font-medium">
+              {secondaryNavItems.map((item) => (
+                <li key={item.to}>
+                  <Link
+                    to={item.to}
+                    className="text-foreground/80 transition-colors hover:text-foreground"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              Kontak
+            </p>
+            <ul className="mt-4 grid gap-2 text-sm font-medium text-foreground/80">
+              <li>Jl. Workshop Kreatif No. 18, Indonesia</li>
+              <li>hello@karyakreasibersama.id</li>
+              <li>Senin – Sabtu, 09.00 – 17.00</li>
+            </ul>
+          </div>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              Mulai proyek
+            </p>
+            <a
+              className="btn-neo btn-neo-secondary mt-4"
+              href={makeWhatsappLink()}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Konsultasi sekarang
+            </a>
+          </div>
         </div>
-        <div>
-          <p className="font-extrabold">Kontak</p>
-          <p className="mt-3 text-sm font-medium leading-relaxed text-muted-foreground">
-            Jl. Workshop Kreatif No. 18, Indonesia
-          </p>
-          <p className="mt-1 text-sm font-medium text-muted-foreground">hello@karyakreasibersama.id</p>
-        </div>
-        <div>
-          <p className="font-extrabold">Mulai proyek</p>
-          <a
-            className="btn-neo btn-neo-secondary mt-3"
-            href={makeWhatsappLink()}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Konsultasi sekarang
-          </a>
+        <div className="mt-10 flex flex-col gap-2 border-t pt-6 text-xs font-medium text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Karya Kreasi Bersama. All rights reserved.</p>
+          <p>Workshop kreatif gerobak usaha modern.</p>
         </div>
       </div>
     </footer>

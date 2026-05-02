@@ -40,53 +40,55 @@ function CatalogPage() {
   return (
     <PageFrame>
       <main>
-        <section className="border-b bg-card">
-          <div className="mx-auto grid max-w-7xl gap-6 px-4 py-12 sm:px-6 md:grid-cols-[1fr_auto] md:items-end lg:px-8">
-            <div>
-              <p className="badge-neo">Catalog</p>
-              <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
-                Pilih gerobak sesuai konsep usaha
-              </h1>
-              <p className="mt-4 max-w-2xl font-medium leading-relaxed text-muted-foreground">
-                Filter model, lihat spesifikasi cepat, lalu lanjut konsultasi untuk ukuran dan
-                finishing custom.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {filters.map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  onClick={() => setFilter(item)}
-                  className={`btn-neo ${filter === item ? "btn-neo-primary" : "btn-neo-ghost"}`}
-                >
-                  {item}
-                </button>
-              ))}
+        <section className="section-shell border-b bg-card">
+          <div className="section-container">
+            <div className="section-header">
+              <div>
+                <p className="eyebrow">Catalog</p>
+                <h1 className="section-title">Pilih gerobak sesuai konsep usaha</h1>
+                <p className="section-lead">
+                  Filter model, lihat spesifikasi cepat, lalu lanjut konsultasi untuk ukuran dan
+                  finishing custom.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {filters.map((item) => (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => setFilter(item)}
+                    className={`btn-neo ${filter === item ? "btn-neo-primary" : "btn-neo-ghost"}`}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </section>
-        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="mb-6 grid gap-3 border-b pb-5 md:grid-cols-[1fr_auto] md:items-center">
-            <div>
-              <h2 className="text-2xl font-bold">Daftar produk</h2>
-              <p className="mt-1 font-medium text-muted-foreground">
-                {filtered.length} model tersedia untuk kategori {filter.toLowerCase()}.
-              </p>
+        <section className="section-shell">
+          <div className="section-container">
+            <div className="section-header">
+              <div>
+                <p className="eyebrow">Daftar produk</p>
+                <h2 className="section-title">
+                  {filtered.length} model untuk kategori {filter.toLowerCase()}
+                </h2>
+              </div>
+              <a
+                className="btn-neo btn-neo-accent"
+                href={makeWhatsappLink()}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Konsultasi custom
+              </a>
             </div>
-            <a
-              className="btn-neo btn-neo-accent"
-              href={makeWhatsappLink()}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Konsultasi custom
-            </a>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {filtered.map((product) => (
-              <ProductCard key={product.slug} product={product} onQuickView={setSelected} />
-            ))}
+            <div className="grid gap-6 md:grid-cols-3">
+              {filtered.map((product) => (
+                <ProductCard key={product.slug} product={product} onQuickView={setSelected} />
+              ))}
+            </div>
           </div>
         </section>
       </main>

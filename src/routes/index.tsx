@@ -83,43 +83,42 @@ function Index() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <div className="mb-8 grid gap-4 border-b pb-6 md:grid-cols-[1fr_auto] md:items-end">
-            <div>
-              <p className="badge-neo">Katalog utama</p>
-              <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
-                Model gerobak siap produksi
-              </h2>
-              <p className="mt-3 max-w-2xl font-medium leading-relaxed text-muted-foreground">
-                Pilihan awal untuk kebutuhan booth minuman, makanan, dan retail dengan opsi custom.
-              </p>
+        <section className="section-shell">
+          <div className="section-container">
+            <div className="section-header">
+              <div>
+                <p className="eyebrow">Katalog utama</p>
+                <h2 className="section-title">Model gerobak siap produksi</h2>
+                <p className="section-lead">
+                  Pilihan awal untuk kebutuhan booth minuman, makanan, dan retail dengan opsi
+                  custom.
+                </p>
+              </div>
+              <Link to="/catalog" className="btn-neo btn-neo-ghost">
+                Semua produk
+              </Link>
             </div>
-            <Link to="/catalog" className="btn-neo btn-neo-ghost">
-              Semua produk
-            </Link>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {products.map((product) => (
-              <ProductCard key={product.slug} product={product} />
-            ))}
+            <div className="grid gap-6 md:grid-cols-3">
+              {products.map((product) => (
+                <ProductCard key={product.slug} product={product} />
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="border-y bg-muted py-14">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-4 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+        <section className="section-shell border-y bg-muted">
+          <div className="section-container">
+            <div className="section-header">
               <div>
-                <p className="badge-neo bg-card">Keunggulan</p>
-                <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
-                  Produksi lebih terarah dan rapi
-                </h2>
+                <p className="eyebrow">Keunggulan</p>
+                <h2 className="section-title">Produksi lebih terarah dan rapi</h2>
+                <p className="section-lead">
+                  Setiap proyek disusun dari kebutuhan operasional, tampilan brand, sampai kesiapan
+                  pemakaian di lapangan.
+                </p>
               </div>
-              <p className="font-medium leading-relaxed text-muted-foreground">
-                Setiap proyek disusun dari kebutuhan operasional, tampilan brand, sampai kesiapan
-                pemakaian di lapangan.
-              </p>
             </div>
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-3">
               {[
                 [
                   "01",
@@ -149,13 +148,16 @@ function Index() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <p className="badge-neo">Alur kerja</p>
-              <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
-                Proses jelas dari brief sampai serah terima
-              </h2>
+        <section className="section-shell">
+          <div className="section-container">
+            <div className="section-header">
+              <div>
+                <p className="eyebrow">Alur kerja</p>
+                <h2 className="section-title">Proses jelas dari brief sampai serah terima</h2>
+                <p className="section-lead">
+                  Tiga tahap utama untuk memastikan setiap unit siap operasional.
+                </p>
+              </div>
             </div>
             <div className="grid gap-4">
               {[
@@ -189,26 +191,26 @@ function Index() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="neo-card bg-brand-yellow p-8 md:p-12">
-            <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-              <div>
-                <h2 className="text-4xl font-extrabold">
-                  Siap punya gerobak yang langsung jualan?
-                </h2>
-                <p className="mt-3 max-w-2xl font-medium leading-relaxed text-muted-foreground">
-                  Kirim konsep usaha kamu, kami bantu rekomendasikan ukuran, material, dan layout
-                  terbaik.
-                </p>
+        <section className="section-shell pt-0">
+          <div className="section-container">
+            <div className="neo-card bg-brand-yellow p-8 md:p-12">
+              <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+                <div>
+                  <h2 className="section-title">Siap punya gerobak yang langsung jualan?</h2>
+                  <p className="mt-3 max-w-2xl font-medium leading-relaxed text-muted-foreground">
+                    Kirim konsep usaha kamu, kami bantu rekomendasikan ukuran, material, dan layout
+                    terbaik.
+                  </p>
+                </div>
+                <a
+                  className="btn-neo btn-neo-accent"
+                  href={makeWhatsappLink()}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Mulai konsultasi
+                </a>
               </div>
-              <a
-                className="btn-neo btn-neo-accent"
-                href={makeWhatsappLink()}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Mulai konsultasi
-              </a>
             </div>
           </div>
         </section>

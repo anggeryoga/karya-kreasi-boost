@@ -61,7 +61,7 @@ function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="section-grid section-grid-2">
               <article className="neo-card neo-card-purple p-7">
                 <h3 className="text-2xl font-extrabold">Visi</h3>
                 <p className="mt-4 font-medium leading-relaxed text-muted-foreground">
@@ -91,7 +91,7 @@ function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="section-grid section-grid-3">
               {products.map((product) => (
                 <article key={product.slug} className="neo-card bg-card p-3">
                   <img

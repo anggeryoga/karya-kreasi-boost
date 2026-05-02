@@ -103,7 +103,7 @@ function ProductDetailPage() {
               <h2 className="section-title">Lihat juga model lainnya</h2>
             </div>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="section-grid section-grid-2">
             {related.map((item) => (
               <ProductCard key={item.slug} product={item} />
             ))}

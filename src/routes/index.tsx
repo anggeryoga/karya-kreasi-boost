@@ -98,7 +98,7 @@ function Index() {
                 Semua produk
               </Link>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="section-grid section-grid-3">
               {products.map((product) => (
                 <ProductCard key={product.slug} product={product} />
               ))}
@@ -118,7 +118,7 @@ function Index() {
                 </p>
               </div>
             </div>
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="section-grid section-grid-3">
               {[
                 [
                   "01",

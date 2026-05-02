@@ -84,7 +84,7 @@ function CatalogPage() {
                 Konsultasi custom
               </a>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="section-grid section-grid-3">
               {filtered.map((product) => (
                 <ProductCard key={product.slug} product={product} onQuickView={setSelected} />
               ))}
@@ -100,7 +100,7 @@ function CatalogPage() {
           aria-label={`Quick view ${selected.name}`}
         >
           <div className="neo-card max-h-[90vh] w-full max-w-3xl overflow-auto bg-card p-5">
-            <div className="grid gap-5 md:grid-cols-2">
+            <div className="section-grid section-grid-2">
               <img
                 src={selected.image}
                 alt={`${selected.name} KKB`}

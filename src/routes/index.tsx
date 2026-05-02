@@ -28,17 +28,17 @@ function Index() {
       <main>
         <section className="relative overflow-hidden border-b bg-card">
           <div className="absolute inset-0 dot-grid opacity-[0.08]" aria-hidden="true" />
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1fr_0.85fr] lg:px-8 lg:py-16">
+          <div className="section-container section-shell grid items-center gap-8 md:grid-cols-[1fr_0.85fr] md:gap-10 lg:gap-12">
             <div className="relative z-10">
               <p className="badge-neo">KKB • Karya Kreasi Bersama</p>
-              <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
+              <h1 className="mt-5 max-w-4xl text-3xl font-extrabold leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl">
                 Partner Produksi Gerobak Usaha Modern
               </h1>
-              <p className="mt-5 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground">
+              <p className="mt-4 max-w-2xl text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">
                 KKB membantu brand kuliner, minuman, dan retail membangun gerobak yang rapi,
                 fungsional, dan siap dipakai untuk operasional harian.
               </p>
-              <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+              <div className="mt-6 grid gap-3 sm:flex sm:flex-wrap">
                 <Link to="/catalog" className="btn-neo btn-neo-primary">
                   Lihat katalog
                 </Link>
@@ -51,15 +51,17 @@ function Index() {
                   Konsultasi WhatsApp
                 </a>
               </div>
-              <div className="mt-10 grid gap-3 sm:grid-cols-3">
+              <div className="mt-8 grid grid-cols-3 gap-2 sm:gap-3">
                 {[
                   ["3+", "Kategori produk"],
                   ["Custom", "Ukuran & finishing"],
                   ["Siap", "Untuk operasional"],
                 ].map(([value, label]) => (
-                  <div key={label} className="rounded-lg border bg-background px-4 py-3">
-                    <p className="text-2xl font-extrabold leading-none">{value}</p>
-                    <p className="mt-1 text-sm font-medium text-muted-foreground">{label}</p>
+                  <div key={label} className="rounded-lg border bg-background px-3 py-3 sm:px-4">
+                    <p className="text-lg font-extrabold leading-none sm:text-2xl">{value}</p>
+                    <p className="mt-1 text-xs font-medium text-muted-foreground sm:text-sm">
+                      {label}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -98,7 +100,7 @@ function Index() {
                 Semua produk
               </Link>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="section-grid section-grid-3">
               {products.map((product) => (
                 <ProductCard key={product.slug} product={product} />
               ))}
@@ -118,7 +120,7 @@ function Index() {
                 </p>
               </div>
             </div>
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="section-grid section-grid-3">
               {[
                 [
                   "01",

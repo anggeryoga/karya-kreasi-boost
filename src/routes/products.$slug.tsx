@@ -30,7 +30,7 @@ function ProductDetailPage() {
 
   return (
     <PageFrame>
-      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <main className="section-container section-shell">
         <Link to="/catalog" className="btn-neo btn-neo-ghost">
           Kembali ke catalog
         </Link>
@@ -95,8 +95,13 @@ function ProductDetailPage() {
           </div>
         </section>
         <section className="mt-16">
-          <h2 className="text-4xl font-extrabold">Produk terkait</h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <div className="section-header">
+            <div>
+              <p className="eyebrow">Produk terkait</p>
+              <h2 className="section-title">Lihat juga model lainnya</h2>
+            </div>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
             {related.map((item) => (
               <ProductCard key={item.slug} product={item} />
             ))}

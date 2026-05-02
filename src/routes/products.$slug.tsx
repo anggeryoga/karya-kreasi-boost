@@ -34,8 +34,8 @@ function ProductDetailPage() {
         <Link to="/catalog" className="btn-neo btn-neo-ghost">
           Kembali ke catalog
         </Link>
-        <section className="mt-8 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="grid gap-4">
+        <section className="mt-6 grid gap-6 md:mt-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+          <div className="grid gap-3 sm:gap-4">
             <div className={`neo-card neo-card-${product.accent} p-3`}>
               <img
                 src={product.image}
@@ -45,7 +45,7 @@ function ProductDetailPage() {
                 className="aspect-[4/3] w-full rounded-lg border object-cover"
               />
             </div>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
               {[product.image, ...related.map((item) => item.image)]
                 .slice(0, 3)
                 .map((image, index) => (
@@ -63,14 +63,16 @@ function ProductDetailPage() {
           </div>
           <div>
             <p className="badge-neo">{product.category}</p>
-            <h1 className="mt-5 text-5xl font-extrabold leading-none">{product.name}</h1>
-            <p className="mt-4 text-3xl font-extrabold">{product.price}</p>
-            <p className="mt-5 text-lg font-medium leading-relaxed text-muted-foreground">
+            <h1 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
+              {product.name}
+            </h1>
+            <p className="mt-3 text-2xl font-extrabold sm:text-3xl">{product.price}</p>
+            <p className="mt-4 text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">
               {product.short}
             </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div className="neo-card p-5">
-                <h2 className="text-2xl font-extrabold">Spesifikasi</h2>
+                <h2 className="text-xl font-extrabold sm:text-2xl">Spesifikasi</h2>
                 <ul className="mt-4 grid gap-2 font-medium text-muted-foreground">
                   {product.specs.map((item) => (
                     <li key={item}>• {item}</li>
@@ -78,7 +80,7 @@ function ProductDetailPage() {
                 </ul>
               </div>
               <div className="neo-card neo-card-yellow p-5">
-                <h2 className="text-2xl font-extrabold">Material</h2>
+                <h2 className="text-xl font-extrabold sm:text-2xl">Material</h2>
                 <ul className="mt-4 grid gap-2 font-medium text-muted-foreground">
                   {product.materials.map((item) => (
                     <li key={item}>• {item}</li>
@@ -87,7 +89,7 @@ function ProductDetailPage() {
               </div>
             </div>
             <a
-              className="btn-neo btn-neo-accent mt-8"
+              className="btn-neo btn-neo-accent mt-6"
               href={makeWhatsappLink(product.name)}
               target="_blank"
               rel="noreferrer"
@@ -96,7 +98,7 @@ function ProductDetailPage() {
             </a>
           </div>
         </section>
-        <section className="mt-16">
+        <section className="mt-12 md:mt-16">
           <div className="section-header">
             <div>
               <p className="eyebrow">Produk terkait</p>

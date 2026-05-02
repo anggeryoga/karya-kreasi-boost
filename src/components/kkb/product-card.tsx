@@ -31,7 +31,9 @@ export function ProductCard({
         <div>
           <p className="badge-neo">{product.category}</p>
           <h2 className="mt-3 text-2xl font-extrabold leading-tight">{product.name}</h2>
-          <p className="mt-2 text-sm font-medium leading-relaxed text-muted-foreground">{product.short}</p>
+          <p className="mt-2 text-sm font-medium leading-relaxed text-muted-foreground">
+            {product.short}
+          </p>
         </div>
         <div className="mt-auto flex flex-wrap items-center justify-between gap-3">
           <p className="text-xl font-extrabold">{product.price}</p>

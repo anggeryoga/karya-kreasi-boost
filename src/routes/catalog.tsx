@@ -24,7 +24,15 @@ export const Route = createFileRoute("/catalog")({
   component: CatalogPage,
 });
 
-const filters = ["Semua", "Minuman", "Makanan", "Retail"] as const;
+const filters = [
+  "Semua",
+  "Minuman",
+  "Makanan",
+  "Retail",
+  "Kanopi",
+  "Pagar",
+  "Furniture",
+] as const;
 
 type Filter = (typeof filters)[number];
 
@@ -42,41 +50,51 @@ function CatalogPage() {
       <main>
         <section className="section-shell border-b bg-card">
           <div className="section-container">
-            <div className="section-header">
-              <div>
-                <p className="eyebrow">Catalog</p>
-                <h1 className="section-title">Pilih gerobak sesuai konsep usaha</h1>
-                <p className="section-lead">
-                  Filter model, lihat spesifikasi cepat, lalu lanjut konsultasi untuk ukuran dan
-                  finishing custom.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {filters.map((item) => (
-                  <button
-                    key={item}
-                    type="button"
-                    onClick={() => setFilter(item)}
-                    className={`btn-neo ${filter === item ? "btn-neo-primary" : "btn-neo-ghost"}`}
-                  >
-                    {item}
-                  </button>
-                ))}
-              </div>
+            <div>
+              <p className="eyebrow">Catalog</p>
+              <h1 className="section-title">Katalog produk & layanan KKB</h1>
+              <p className="section-lead">
+                Gerobak usaha, kanopi rumah, pagar, hingga furniture custom — semua dikerjakan oleh
+                workshop KKB.
+              </p>
             </div>
           </div>
         </section>
+        <div className="sticky top-[64px] z-30 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+          <div className="section-container py-3">
+            <div
+              className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              role="tablist"
+              aria-label="Filter kategori"
+            >
+              {filters.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  role="tab"
+                  aria-selected={filter === item}
+                  onClick={() => setFilter(item)}
+                  className={`btn-neo shrink-0 whitespace-nowrap px-3 py-2 text-sm ${
+                    filter === item ? "btn-neo-primary" : "btn-neo-ghost"
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
         <section className="section-shell">
           <div className="section-container">
-            <div className="section-header">
+            <div className="mb-5 flex items-center justify-between gap-3 sm:mb-7">
               <div>
                 <p className="eyebrow">Daftar produk</p>
-                <h2 className="section-title">
-                  {filtered.length} model untuk kategori {filter.toLowerCase()}
+                <h2 className="text-lg font-extrabold sm:text-2xl">
+                  {filtered.length} item · {filter}
                 </h2>
               </div>
               <a
-                className="btn-neo btn-neo-accent"
+                className="btn-neo btn-neo-accent hidden sm:inline-flex"
                 href={makeWhatsappLink()}
                 target="_blank"
                 rel="noreferrer"
@@ -84,9 +102,14 @@ function CatalogPage() {
                 Konsultasi custom
               </a>
             </div>
-            <div className="section-grid section-grid-3">
+            <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
               {filtered.map((product) => (
-                <ProductCard key={product.slug} product={product} onQuickView={setSelected} />
+                <ProductCard
+                  key={product.slug}
+                  product={product}
+                  onQuickView={setSelected}
+                  compact
+                />
               ))}
             </div>
           </div>

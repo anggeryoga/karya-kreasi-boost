@@ -1,11 +1,14 @@
 import gerobakKopi from "../assets/kkb-gerobak-kopi.jpg";
 import gerobakMakanan from "../assets/kkb-gerobak-makanan.jpg";
 import gerobakMini from "../assets/kkb-gerobak-mini.jpg";
+import kanopiRumah from "../assets/kkb-kanopi-rumah.jpg";
+import pagarRumah from "../assets/kkb-pagar-rumah.jpg";
+import furnitureRumah from "../assets/kkb-furniture-rumah.jpg";
 
 export type Product = {
   slug: string;
   name: string;
-  category: "Minuman" | "Makanan" | "Retail";
+  category: "Minuman" | "Makanan" | "Retail" | "Kanopi" | "Pagar" | "Furniture";
   price: string;
   specs: string[];
   materials: string[];
@@ -53,6 +56,57 @@ export const products: Product[] = [
     materials: ["Besi hollow", "Kaca tempered", "Panel HPL", "Roda karet"],
     short: "Booth compact untuk pop-up store, dessert, aksesoris, dan jualan indoor-outdoor.",
     image: gerobakMini,
+    accent: "yellow",
+  },
+  {
+    slug: "kanopi-rumah-minimalis",
+    name: "Kanopi Rumah Minimalis",
+    category: "Kanopi",
+    price: "Mulai Rp 650rb / m²",
+    specs: [
+      "Custom ukuran area",
+      "Atap polycarbonate / kaca",
+      "Rangka besi hollow galvanis",
+      "Garansi pemasangan",
+    ],
+    materials: ["Hollow galvanis", "Polycarbonate solid", "Powder coating", "Baut anti karat"],
+    short:
+      "Kanopi carport dan teras rumah dengan rangka kokoh dan finishing rapi siap pasang on-site.",
+    image: kanopiRumah,
+    accent: "blue",
+  },
+  {
+    slug: "pagar-rumah-modern",
+    name: "Pagar Rumah Modern",
+    category: "Pagar",
+    price: "Mulai Rp 850rb / m²",
+    specs: [
+      "Desain custom minimalis",
+      "Finishing powder coating",
+      "Engsel heavy duty",
+      "Opsi sliding / swing",
+    ],
+    materials: ["Besi hollow", "Plat laser cut", "Powder coating outdoor", "Aksen kayu / GRC"],
+    short:
+      "Pagar minimalis dan klasik dengan finishing tahan cuaca, dipasang presisi oleh tim KKB.",
+    image: pagarRumah,
+    accent: "purple",
+  },
+  {
+    slug: "furniture-rumah-custom",
+    name: "Furniture Rumah Custom",
+    category: "Furniture",
+    price: "Mulai Rp 2,5 jt / unit",
+    specs: [
+      "Kitchen set, wardrobe, TV cabinet",
+      "Desain 3D sebelum produksi",
+      "Finishing HPL / duco",
+      "Pengukuran on-site",
+    ],
+    materials: ["Multiplek / plywood", "HPL Taco", "Engsel Huben / Blum", "Handle stainless"],
+    short:
+      "Jasa furniture custom rumah: kitchen set, lemari, dan storage built-in sesuai ruangan.",
+    image: furnitureRumah,
     accent: "yellow",
   },
 ];

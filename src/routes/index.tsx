@@ -2,6 +2,53 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageFrame } from "../components/kkb/site-shell";
 import { ProductCard } from "../components/kkb/product-card";
 import { makeWhatsappLink, products } from "../data/products";
+import { PriceEstimator } from "../components/kkb/price-estimator";
+import portfolio1 from "../assets/kkb-portfolio-1.jpg";
+import portfolio2 from "../assets/kkb-portfolio-2.jpg";
+import portfolio3 from "../assets/kkb-portfolio-3.jpg";
+import portfolio4 from "../assets/kkb-portfolio-4.jpg";
+
+const portfolioItems = [
+  { src: portfolio1, title: "Coffee Cart — Bandung", tag: "Gerobak Kopi" },
+  { src: portfolio2, title: "Bakerdis Booth — Jakarta", tag: "Booth Makanan" },
+  { src: portfolio3, title: "Kanopi Carport — Bekasi", tag: "Kanopi Rumah" },
+  { src: portfolio4, title: "Kitchen Set — Tangerang", tag: "Furniture Custom" },
+] as const;
+
+const testimonials = [
+  {
+    name: "Rizky Pratama",
+    business: "Kopi Lokal Bandung",
+    city: "Bandung",
+    quote:
+      "Gerobak datang sesuai desain, finishing rapi, dan langsung bisa dipakai jualan hari pertama. Tim KKB komunikatif banget.",
+    initial: "R",
+  },
+  {
+    name: "Sinta Maharani",
+    business: "Bakerdis Pastry",
+    city: "Jakarta Selatan",
+    quote:
+      "Booth-nya bikin brand kami terlihat profesional di pop-up market. Customer banyak yang nanyain di mana bikinnya.",
+    initial: "S",
+  },
+  {
+    name: "Pak Yusuf",
+    business: "Rumah Tinggal Pribadi",
+    city: "Bekasi",
+    quote:
+      "Pasang kanopi & pagar sekaligus. Pengerjaan cepat, hasilnya kokoh dan rapi. Recommended buat warga komplek.",
+    initial: "Y",
+  },
+  {
+    name: "Mbak Dinda",
+    business: "Renovasi Rumah",
+    city: "Tangerang",
+    quote:
+      "Kitchen set custom hasilnya sesuai 3D yang dikirim. Pengukuran on-site bikin tidak ada yang meleset.",
+    initial: "D",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -103,6 +150,102 @@ function Index() {
             <div className="section-grid section-grid-3">
               {products.map((product) => (
                 <ProductCard key={product.slug} product={product} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-shell border-y bg-card">
+          <div className="section-container">
+            <div className="section-header">
+              <div>
+                <p className="eyebrow">Portofolio</p>
+                <h2 className="section-title">Hasil karya nyata yang sudah terkirim</h2>
+                <p className="section-lead">
+                  Foto unit yang sudah diproduksi dan dipasang di lokasi klien — bukan render,
+                  bukan stok foto.
+                </p>
+              </div>
+              <Link to="/catalog" className="btn-neo btn-neo-ghost">
+                Lihat semua proyek
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+              {portfolioItems.map((item) => (
+                <figure key={item.title} className="neo-card overflow-hidden bg-card">
+                  <img
+                    src={item.src}
+                    alt={`Portofolio KKB - ${item.title}`}
+                    width={1024}
+                    height={768}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  <figcaption className="border-t p-3 sm:p-4">
+                    <p className="text-[0.65rem] font-bold uppercase tracking-wider text-muted-foreground sm:text-xs">
+                      {item.tag}
+                    </p>
+                    <p className="mt-1 text-sm font-extrabold leading-tight sm:text-base">
+                      {item.title}
+                    </p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-shell">
+          <div className="section-container">
+            <div className="section-header">
+              <div>
+                <p className="eyebrow">Estimator harga</p>
+                <h2 className="section-title">Hitung estimasi sebelum chat WhatsApp</h2>
+                <p className="section-lead">
+                  Pilih jenis, ukuran, dan finishing untuk mendapatkan rentang harga kasar.
+                  Estimasi otomatis dikirim ke WhatsApp saat kamu lanjut konsultasi.
+                </p>
+              </div>
+            </div>
+            <PriceEstimator />
+          </div>
+        </section>
+
+        <section className="section-shell border-y bg-muted">
+          <div className="section-container">
+            <div className="section-header">
+              <div>
+                <p className="eyebrow">Testimoni klien</p>
+                <h2 className="section-title">Cerita dari pemilik usaha & rumah</h2>
+                <p className="section-lead">
+                  Klien KKB tersebar di Jabodetabek, Bandung, dan kota-kota lain. Berikut beberapa
+                  ulasan setelah unit diterima.
+                </p>
+              </div>
+            </div>
+            <div className="section-grid section-grid-3">
+              {testimonials.slice(0, 3).map((t) => (
+                <article key={t.name} className="neo-card flex h-full flex-col gap-4 bg-card p-5">
+                  <div className="flex items-center gap-3">
+                    <span className="grid h-12 w-12 place-items-center rounded-full border bg-brand-yellow text-lg font-extrabold shadow-neo-sm">
+                      {t.initial}
+                    </span>
+                    <div className="leading-tight">
+                      <p className="text-sm font-extrabold">{t.name}</p>
+                      <p className="text-xs font-medium text-muted-foreground">
+                        {t.business} · {t.city}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-sm font-medium leading-relaxed text-foreground/80">
+                    “{t.quote}”
+                  </p>
+                  <div className="mt-auto flex gap-0.5 text-brand-blue" aria-label="Rating 5 dari 5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span key={i} aria-hidden="true">★</span>
+                    ))}
+                  </div>
+                </article>
               ))}
             </div>
           </div>

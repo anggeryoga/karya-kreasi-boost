@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import kkbLogo from "../../assets/kkb-logo.png";
 import { makeWhatsappLink } from "../../data/products";
+import { AnnouncementBar } from "./announcement-bar";
 
 const navItems = [
   { to: "/", label: "Beranda" },
@@ -145,6 +146,7 @@ export function SiteFooter() {
 export function PageFrame({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <AnnouncementBar />
       <SiteHeader />
       {children}
       <SiteFooter />

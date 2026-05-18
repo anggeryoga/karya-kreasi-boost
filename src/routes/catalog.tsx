@@ -19,6 +19,10 @@ export const Route = createFileRoute("/catalog")({
         property: "og:description",
         content: "Katalog gerobak usaha modern siap pakai dari Karya Kreasi Bersama.",
       },
+      { property: "og:url", content: "https://karya-kreasi-boost.lovable.app/catalog" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://karya-kreasi-boost.lovable.app/catalog" },
     ],
   }),
   component: CatalogPage,

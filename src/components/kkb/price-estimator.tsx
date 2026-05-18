@@ -22,6 +22,11 @@ const finishingOptions = [
   { id: "premium", label: "+ Finishing premium", mult: 1.25 },
 ] as const;
 
+const serviceOptions = [
+  { id: "ready", label: "Ready stock", note: "Model siap, waktu produksi singkat" },
+  { id: "custom", label: "Custom desain", note: "Desain & ukuran menyesuaikan brief" },
+] as const;
+
 const formatRupiah = (n: number) =>
   new Intl.NumberFormat("id-ID", {
     style: "currency",

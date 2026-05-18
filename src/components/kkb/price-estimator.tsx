@@ -127,6 +127,42 @@ export function PriceEstimator() {
             ))}
           </div>
         </div>
+        <div>
+          <label className="eyebrow">Jenis layanan</label>
+          <div className="mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2">
+            {serviceOptions.map((o) => (
+              <button
+                key={o.id}
+                type="button"
+                onClick={() => setServiceId(o.id)}
+                className={`rounded-md border-[1.3px] border-border px-3 py-2 text-left ${
+                  serviceId === o.id ? "bg-brand-yellow shadow-neo-sm" : "bg-card"
+                }`}
+              >
+                <span className="block text-xs font-bold">{o.label}</span>
+                <span className="block text-[0.7rem] font-medium text-muted-foreground">
+                  {o.note}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+        <div>
+          <label className="eyebrow" htmlFor="estimator-city">
+            Kota / lokasi pemasangan
+          </label>
+          <input
+            id="estimator-city"
+            type="text"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder="Contoh: Bekasi, Bandung, Surabaya"
+            className="mt-2 w-full rounded-md border-[1.3px] border-border bg-background px-3 py-2.5 text-sm font-semibold focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
+          />
+          <p className="mt-1 text-[0.7rem] font-medium text-muted-foreground">
+            Membantu kami menghitung estimasi ongkir & jadwal instalasi.
+          </p>
+        </div>
       </div>
       <aside className="neo-card neo-card-yellow flex flex-col justify-between gap-4 p-5">
         <div>

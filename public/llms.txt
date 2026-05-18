@@ -1,0 +1,10 @@
+# Karya Kreasi Bersama (KKB)
+
+> Workshop kreatif pembuat gerobak usaha modern, kanopi, pagar, dan furniture custom untuk UMKM dan rumah tinggal di Indonesia.
+
+## Pages
+
+- [Beranda](/): Ringkasan layanan KKB, portofolio, estimator harga, dan testimoni klien.
+- [Katalog](/catalog): Daftar produk gerobak minuman, makanan, retail, kanopi, pagar, dan furniture.
+- [Tentang](/about): Cerita brand Karya Kreasi Bersama dan pendekatan produksi.
+- [Kontak](/contact): Alamat workshop, email, jam operasional, dan form brief proyek.

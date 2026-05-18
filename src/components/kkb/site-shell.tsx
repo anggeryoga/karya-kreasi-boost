@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { Menu } from "lucide-react";
 import kkbLogo from "../../assets/kkb-logo.png";
 import { makeWhatsappLink } from "../../data/products";
 import { AnnouncementBar } from "./announcement-bar";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navItems = [
   { to: "/", label: "Beranda" },
@@ -13,6 +16,8 @@ const navItems = [
 const secondaryNavItems = navItems.filter((item) => item.to !== "/");
 
 export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-40 border-b bg-card/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
@@ -36,6 +41,7 @@ export function SiteHeader() {
             </span>
           </span>
         </Link>
+
         <nav className="hidden items-center gap-2 md:flex" aria-label="Navigasi utama">
           {secondaryNavItems.map((item) => (
             <Link
@@ -49,6 +55,7 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+
         <a
           className="btn-neo btn-neo-primary hidden sm:inline-flex"
           href={makeWhatsappLink()}
@@ -57,20 +64,43 @@ export function SiteHeader() {
         >
           WhatsApp
         </a>
+
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <button
+              type="button"
+              aria-label="Buka menu"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border bg-card shadow-neo-sm transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring md:hidden"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="flex w-3/4 flex-col gap-6 sm:max-w-xs">
+            <div className="mt-8 grid gap-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="rounded-md border bg-card px-4 py-3 text-sm font-semibold shadow-neo-sm transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
+                  activeOptions={{ exact: true }}
+                  activeProps={{ className: "bg-brand-blue text-accent-foreground" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <a
+              className="btn-neo btn-neo-primary w-full"
+              href={makeWhatsappLink()}
+              target="_blank"
+              rel="noreferrer"
+            >
+              WhatsApp
+            </a>
+          </SheetContent>
+        </Sheet>
       </div>
-      <nav className="grid grid-cols-3 gap-2 px-4 pb-3 md:hidden" aria-label="Navigasi mobile">
-        {secondaryNavItems.map((item) => (
-          <Link
-            key={item.to}
-            to={item.to}
-            className="rounded-md border bg-card px-2 py-2 text-center text-xs font-semibold shadow-neo-sm"
-            activeOptions={{ exact: true }}
-            activeProps={{ className: "bg-brand-blue text-accent-foreground" }}
-          >
-            {item.label}
-          </Link>
-        ))}
-      </nav>
     </header>
   );
 }

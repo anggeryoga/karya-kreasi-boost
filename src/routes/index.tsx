@@ -64,6 +64,38 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Solusi gerobak usaha modern dan siap pakai dari Karya Kreasi Bersama.",
       },
+      { property: "og:url", content: "https://karya-kreasi-boost.lovable.app/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://karya-kreasi-boost.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Karya Kreasi Bersama",
+          url: "https://karya-kreasi-boost.lovable.app",
+          description:
+            "Workshop kreatif pembuat gerobak usaha modern, kanopi, pagar, dan furniture custom.",
+          email: "hello@karyakreasibersama.id",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Jl. Workshop Kreatif No. 18",
+            addressCountry: "ID",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Karya Kreasi Bersama",
+          url: "https://karya-kreasi-boost.lovable.app",
+        }),
+      },
     ],
   }),
   component: Index,

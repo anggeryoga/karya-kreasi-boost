@@ -17,6 +17,10 @@ export const Route = createFileRoute("/about")({
         content:
           "Kenali KKB, partner produksi gerobak usaha modern untuk brand kuliner dan retail.",
       },
+      { property: "og:url", content: "https://karya-kreasi-boost.lovable.app/about" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://karya-kreasi-boost.lovable.app/about" },
     ],
   }),
   component: AboutPage,

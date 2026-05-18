@@ -74,7 +74,7 @@ function ProductDetailPage() {
               <div className="neo-card p-5">
                 <h2 className="text-xl font-extrabold sm:text-2xl">Spesifikasi</h2>
                 <ul className="mt-4 grid gap-2 font-medium text-muted-foreground">
-                  {product.specs.map((item) => (
+                  {product.specs.map((item: string) => (
                     <li key={item}>• {item}</li>
                   ))}
                 </ul>
@@ -82,7 +82,7 @@ function ProductDetailPage() {
               <div className="neo-card neo-card-yellow p-5">
                 <h2 className="text-xl font-extrabold sm:text-2xl">Material</h2>
                 <ul className="mt-4 grid gap-2 font-medium text-muted-foreground">
-                  {product.materials.map((item) => (
+                  {product.materials.map((item: string) => (
                     <li key={item}>• {item}</li>
                   ))}
                 </ul>

@@ -39,17 +39,28 @@ export function PriceEstimator() {
   const [sizeId, setSizeId] = useState<(typeof sizeOptions)[number]["id"]>("S");
   const [finishId, setFinishId] = useState<(typeof finishingOptions)[number]["id"]>("basic");
   const [qty, setQty] = useState(1);
+  const [serviceId, setServiceId] = useState<(typeof serviceOptions)[number]["id"]>("ready");
+  const [city, setCity] = useState("");
 
-  const { type, low, high } = useMemo(() => {
+  const { type, service, low, high } = useMemo(() => {
     const t = productTypes.find((p) => p.id === typeId)!;
     const s = sizeOptions.find((o) => o.id === sizeId)!;
     const f = finishingOptions.find((o) => o.id === finishId)!;
+    const sv = serviceOptions.find((o) => o.id === serviceId)!;
     const safeQty = Math.min(Math.max(Number.isFinite(qty) ? qty : 1, 1), 50);
-    const base = t.base * s.mult * f.mult * safeQty;
-    return { type: t, low: Math.round(base / 100000) * 100000, high: Math.round((base * 1.18) / 100000) * 100000 };
-  }, [typeId, sizeId, finishId, qty]);
+    const customMult = sv.id === "custom" ? 1.15 : 1;
+    const base = t.base * s.mult * f.mult * safeQty * customMult;
+    return {
+      type: t,
+      service: sv,
+      low: Math.round(base / 100000) * 100000,
+      high: Math.round((base * 1.18) / 100000) * 100000,
+    };
+  }, [typeId, sizeId, finishId, qty, serviceId]);
 
-  const waText = `Halo KKB, saya tertarik estimasi: ${type.label} (${sizeId}, finishing ${finishId}, qty ${qty}). Estimasi ${formatRupiah(low)} – ${formatRupiah(high)}. Mohon info lebih lanjut.`;
+  const trimmedCity = city.trim();
+  const cityLine = trimmedCity ? ` Lokasi pemasangan: ${trimmedCity}.` : "";
+  const waText = `Halo KKB, saya tertarik estimasi: ${type.label} (${sizeId}, finishing ${finishId}, qty ${qty}, layanan ${service.label}).${cityLine} Estimasi ${formatRupiah(low)} – ${formatRupiah(high)}. Mohon info ongkir & instalasi lebih lanjut.`;
   const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waText)}`;
 
   return (

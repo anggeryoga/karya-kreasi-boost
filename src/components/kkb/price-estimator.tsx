@@ -22,6 +22,11 @@ const finishingOptions = [
   { id: "premium", label: "+ Finishing premium", mult: 1.25 },
 ] as const;
 
+const serviceOptions = [
+  { id: "ready", label: "Ready stock", note: "Model siap, waktu produksi singkat" },
+  { id: "custom", label: "Custom desain", note: "Desain & ukuran menyesuaikan brief" },
+] as const;
+
 const formatRupiah = (n: number) =>
   new Intl.NumberFormat("id-ID", {
     style: "currency",
@@ -34,17 +39,28 @@ export function PriceEstimator() {
   const [sizeId, setSizeId] = useState<(typeof sizeOptions)[number]["id"]>("S");
   const [finishId, setFinishId] = useState<(typeof finishingOptions)[number]["id"]>("basic");
   const [qty, setQty] = useState(1);
+  const [serviceId, setServiceId] = useState<(typeof serviceOptions)[number]["id"]>("ready");
+  const [city, setCity] = useState("");
 
-  const { type, low, high } = useMemo(() => {
+  const { type, service, low, high } = useMemo(() => {
     const t = productTypes.find((p) => p.id === typeId)!;
     const s = sizeOptions.find((o) => o.id === sizeId)!;
     const f = finishingOptions.find((o) => o.id === finishId)!;
+    const sv = serviceOptions.find((o) => o.id === serviceId)!;
     const safeQty = Math.min(Math.max(Number.isFinite(qty) ? qty : 1, 1), 50);
-    const base = t.base * s.mult * f.mult * safeQty;
-    return { type: t, low: Math.round(base / 100000) * 100000, high: Math.round((base * 1.18) / 100000) * 100000 };
-  }, [typeId, sizeId, finishId, qty]);
+    const customMult = sv.id === "custom" ? 1.15 : 1;
+    const base = t.base * s.mult * f.mult * safeQty * customMult;
+    return {
+      type: t,
+      service: sv,
+      low: Math.round(base / 100000) * 100000,
+      high: Math.round((base * 1.18) / 100000) * 100000,
+    };
+  }, [typeId, sizeId, finishId, qty, serviceId]);
 
-  const waText = `Halo KKB, saya tertarik estimasi: ${type.label} (${sizeId}, finishing ${finishId}, qty ${qty}). Estimasi ${formatRupiah(low)} – ${formatRupiah(high)}. Mohon info lebih lanjut.`;
+  const trimmedCity = city.trim();
+  const cityLine = trimmedCity ? ` Lokasi pemasangan: ${trimmedCity}.` : "";
+  const waText = `Halo KKB, saya tertarik estimasi: ${type.label} (${sizeId}, finishing ${finishId}, qty ${qty}, layanan ${service.label}).${cityLine} Estimasi ${formatRupiah(low)} – ${formatRupiah(high)}. Mohon info ongkir & instalasi lebih lanjut.`;
   const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waText)}`;
 
   return (
@@ -110,6 +126,42 @@ export function PriceEstimator() {
               </button>
             ))}
           </div>
+        </div>
+        <div>
+          <label className="eyebrow">Jenis layanan</label>
+          <div className="mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2">
+            {serviceOptions.map((o) => (
+              <button
+                key={o.id}
+                type="button"
+                onClick={() => setServiceId(o.id)}
+                className={`rounded-md border-[1.3px] border-border px-3 py-2 text-left ${
+                  serviceId === o.id ? "bg-brand-yellow shadow-neo-sm" : "bg-card"
+                }`}
+              >
+                <span className="block text-xs font-bold">{o.label}</span>
+                <span className="block text-[0.7rem] font-medium text-muted-foreground">
+                  {o.note}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+        <div>
+          <label className="eyebrow" htmlFor="estimator-city">
+            Kota / lokasi pemasangan
+          </label>
+          <input
+            id="estimator-city"
+            type="text"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder="Contoh: Bekasi, Bandung, Surabaya"
+            className="mt-2 w-full rounded-md border-[1.3px] border-border bg-background px-3 py-2.5 text-sm font-semibold focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
+          />
+          <p className="mt-1 text-[0.7rem] font-medium text-muted-foreground">
+            Membantu kami menghitung estimasi ongkir & jadwal instalasi.
+          </p>
         </div>
       </div>
       <aside className="neo-card neo-card-yellow flex flex-col justify-between gap-4 p-5">

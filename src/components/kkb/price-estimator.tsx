@@ -67,8 +67,11 @@ export function PriceEstimator() {
     <div className="neo-card grid gap-6 bg-card p-5 md:grid-cols-[1.2fr_1fr] md:p-8">
       <div className="grid gap-4">
         <div>
-          <label className="eyebrow">Jenis produk</label>
+          <label className="eyebrow" htmlFor="estimator-type">
+            Jenis produk
+          </label>
           <select
+            id="estimator-type"
             value={typeId}
             onChange={(e) => setTypeId(e.target.value as typeof typeId)}
             className="mt-2 w-full rounded-md border-[1.3px] border-border bg-background px-3 py-2.5 text-sm font-semibold focus:outline-none focus-visible:ring-4 focus-visible:ring-ring"
@@ -99,8 +102,11 @@ export function PriceEstimator() {
             </div>
           </div>
           <div>
-            <label className="eyebrow">Jumlah ({type.unit})</label>
+            <label className="eyebrow" htmlFor="estimator-qty">
+              Jumlah ({type.unit})
+            </label>
             <input
+              id="estimator-qty"
               type="number"
               min={1}
               max={50}

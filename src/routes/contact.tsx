@@ -16,6 +16,33 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Konsultasikan kebutuhan gerobak usaha modern bersama Karya Kreasi Bersama.",
       },
+      { property: "og:url", content: "https://karya-kreasi-boost.lovable.app/contact" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://karya-kreasi-boost.lovable.app/contact" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Karya Kreasi Bersama",
+          url: "https://karya-kreasi-boost.lovable.app/contact",
+          email: "hello@karyakreasibersama.id",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Jl. Workshop Kreatif No. 18",
+            addressCountry: "ID",
+          },
+          openingHoursSpecification: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            opens: "09:00",
+            closes: "17:00",
+          },
+        }),
+      },
     ],
   }),
   component: ContactPage,

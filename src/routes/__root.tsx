@@ -29,21 +29,22 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
+      { title: "KKB — Gerobak Usaha Modern" },
       {
         name: "description",
         content: "KKB Business Wheels is a modern, ready-to-use business cart website.",
       },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
+      { name: "author", content: "Karya Kreasi Bersama" },
+      { property: "og:title", content: "KKB — Gerobak Usaha Modern" },
       {
         property: "og:description",
         content: "KKB Business Wheels is a modern, ready-to-use business cart website.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Karya Kreasi Bersama" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
+      { name: "twitter:title", content: "KKB — Gerobak Usaha Modern" },
       {
         name: "twitter:description",
         content: "KKB Business Wheels is a modern, ready-to-use business cart website.",

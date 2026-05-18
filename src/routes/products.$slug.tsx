@@ -9,8 +9,9 @@ export const Route = createFileRoute("/products/$slug")({
     if (!product) throw notFound();
     return product;
   },
-  head: ({ loaderData }) => {
+  head: ({ params, loaderData }) => {
     const product = loaderData ?? products[0];
+    const url = `https://karya-kreasi-boost.lovable.app/products/${params.slug}`;
 
     return {
       meta: [
@@ -18,6 +19,30 @@ export const Route = createFileRoute("/products/$slug")({
         { name: "description", content: `${product.name} dari KKB: ${product.short}` },
         { property: "og:title", content: `${product.name} KKB` },
         { property: "og:description", content: product.short },
+        { property: "og:url", content: url },
+        { property: "og:type", content: "product" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.name,
+            description: product.short,
+            image: product.image,
+            category: product.category,
+            brand: { "@type": "Brand", name: "Karya Kreasi Bersama" },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "IDR",
+              price: product.price,
+              availability: "https://schema.org/InStock",
+              url,
+            },
+          }),
+        },
       ],
     };
   },
